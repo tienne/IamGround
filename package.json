@@ -1,0 +1,23 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tienne/resume.git"
+  },
+  "keywords": [
+    "angular",
+    "4"
+  ],
+  "author": "tienne89",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tienne/resume/issues"
+  },
+  "homepage": "https://github.com/tienne/resume#readme"
+}
