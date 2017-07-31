@@ -21,10 +21,12 @@
       "styles": [
         "styles.sass"
       ],
+      "serviceWorker": true,
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
+        "hmr": "environments/environment.hmr.ts",
         "prod": "environments/environment.prod.ts"
       }
     }
@@ -53,6 +55,9 @@
   "defaults": {
     "styleExt": "sass",
     "component": {
+    },
+    "serve": {
+      "hmr": true
     }
   }
 }

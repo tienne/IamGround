@@ -4,10 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { MdToolbarModule, MdIconModule } from '@angular/material';
+import { ToolbarComponent } from './layouts/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ToolbarComponent,
   ],
   imports: [
     BrowserModule,
