@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ToolbarComponent } from './toolbar/toolbar.component';
-import { MdToolbarModule, MdIconModule } from '@angular/material';
+
+import { SHARED_MODULES, COMPONENT_DECLARATIONS, COMPONENT_EXPORTS } from './core.common';
+import { MaterialComponentsModule } from '../material-components.module';
 
 @NgModule({
   imports: [
-    CommonModule,
-    MdToolbarModule,
-    MdIconModule,
-  ],
-  exports: [
-    ToolbarComponent
+    MaterialComponentsModule,
+    ...SHARED_MODULES,
   ],
   declarations: [
-    ToolbarComponent
+    ...COMPONENT_DECLARATIONS
+  ],
+  exports: [
+    ...COMPONENT_EXPORTS
   ]
 })
 export class CoreModule { }
