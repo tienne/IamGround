@@ -100,7 +100,7 @@ function getRules() {
         },
         // SASS support
         {
-            test: /\.scss$/,
+            test: /\.sass$/,
             use: [
                 "raw-loader",
                 "resolve-url-loader",

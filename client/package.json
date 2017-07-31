@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "postinstall": "node symlink.js && npm run nativeInstall",
+    "nativeInstall": "cd nativescript && npm install",
     "ng": "ng",
     "start": "ng serve",
     "hmr": "ng serve --hmr -e=hmr",

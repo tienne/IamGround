@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "client:serve": "cd client && ng serve"
+    "client:serve": "cd client && npm run hmr"
   },
   "repository": {
     "type": "git",
