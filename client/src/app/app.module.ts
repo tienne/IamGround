@@ -3,19 +3,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
-import { MdToolbarModule, MdIconModule } from '@angular/material';
-import { ToolbarComponent } from './layouts/toolbar/toolbar.component';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ToolbarComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    MdToolbarModule,
-    MdIconModule
+    CoreModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
