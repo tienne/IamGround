@@ -1,17 +1,18 @@
-<md-sidenav-container class="admin-container">
+<md-sidenav-container>
 
-  <!--<md-sidenav class="quickpanel" [opened]="quickpanelOpen" align="end" mode="over" #quickpanel>-->
+  <md-sidenav class="quickpanel" [opened]="quickpanelOpen" align="end" mode="over" #quickpanel>
 
-    <!--<ms-quickpanel></ms-quickpanel>-->
+  </md-sidenav>
 
-  <!--</md-sidenav>-->
+  <md-sidenav class="sidenav" [opened]="sidenavOpen" align="start" [mode]="sidenavMode" #sidenav>
 
-  <md-sidenav class="sidenav">
+    <app-sidenav></app-sidenav>
 
   </md-sidenav>
 
   <div class="content-container" fxLayout="column">
-    <app-toolbar></app-toolbar>
+    <!-- -->
+    <app-toolbar [quickpanel]="quickpanel" [sidenav]="sidenav"></app-toolbar>
     <div class="main-container" >
       <router-outlet></router-outlet>
     </div>

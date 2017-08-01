@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../node_modules/normalize.css/normalize.css",
         "styles.scss"
       ],
       "serviceWorker": true,
@@ -57,6 +58,7 @@
     "component": {
     },
     "serve": {
+      "port": 6158,
       "hmr": true
     }
   }

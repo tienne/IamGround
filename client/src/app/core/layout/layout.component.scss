@@ -1,0 +1,13 @@
+@import '../../../styles/var';
+
+md-sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: $sidenav-width;
+  max-width: $sidenav-width;
+  background: $sidenav-background-color;
+  overflow-x: hidden;
+  z-index: $md-sidenav-z-index;
+}

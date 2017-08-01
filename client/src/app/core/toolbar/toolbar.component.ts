@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -6,9 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
+  // 퀵패널 영역
+  @Input('quickpanel') quickpanel: any;
+  @Input('sidenav') sidenav: any;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.quickpanel.open);
+  }
 
 }

@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
+  //퀵패널 노출여부
+  quickpanelOpen: boolean = false;
+  //
+  sidenavOpen: boolean = true;
+  sidenavMode: string = 'side';
+
   constructor() { }
 
   ngOnInit() {

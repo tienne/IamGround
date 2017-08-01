@@ -20,6 +20,7 @@
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
     "@angular/core": "^4.0.0",
+    "@angular/flex-layout": "^2.0.0-beta.8",
     "@angular/forms": "^4.0.0",
     "@angular/http": "^4.0.0",
     "@angular/material": "^2.0.0-beta.8",
@@ -30,6 +31,7 @@
     "@ngx-translate/core": "^7.1.0",
     "@ngx-translate/http-loader": "^1.0.1",
     "core-js": "^2.4.1",
+    "normalize.css": "^7.0.0",
     "outdated-browser-rework": "^1.0.2",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
