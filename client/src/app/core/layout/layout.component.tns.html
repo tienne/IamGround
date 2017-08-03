@@ -1,0 +1,18 @@
+<Page>
+  <FlexboxLayout flexDirection="column" #sidenav>
+    <app-sidenav></app-sidenav>
+  </FlexboxLayout>
+
+  <FlexboxLayout flexDirection="column" #quickpanel>
+
+  </FlexboxLayout>
+
+  <FlexboxLayout flexDirection="column">
+    <Page.actionBar>
+      <app-toolbar></app-toolbar>
+    </Page.actionBar>
+    <ScrollView flexGrow="1">
+      <router-outlet></router-outlet>
+    </ScrollView>
+  </FlexboxLayout>
+</Page>
