@@ -12,4 +12,4 @@ export const hmrBootstrap = (module: any, bootstrap: () => Promise<NgModuleRef<a
     ngModule.destroy();
     makeVisible();
   });
-}
+};

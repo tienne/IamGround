@@ -1,7 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "iamground"
+    "name": "iamground",
+    "ejected": true
   },
   "apps": [
     {
@@ -9,7 +10,8 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "meta"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -18,11 +20,11 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
+      "serviceWorker": true,
       "styles": [
         "../node_modules/normalize.css/normalize.css",
         "styles.scss"
       ],
-      "serviceWorker": true,
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -58,8 +60,7 @@
     "component": {
     },
     "serve": {
-      "port": 6158,
-      "hmr": true
+      "port": 6158
     }
   }
 }

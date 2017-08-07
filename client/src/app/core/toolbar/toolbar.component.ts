@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss']
