@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// app
 import { AppComponent } from './app.component';
-
-import { SHARED_MODULES } from './app.common';
+import { AppRoutingModule } from './app-routing.module';
+// core 부분
 import { CoreModule } from './core/core.module';
+
+import { ResumeModule } from './resume/resume.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,8 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     CoreModule,
     BrowserAnimationsModule,
-    ...SHARED_MODULES
+    AppRoutingModule,
+    ResumeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
