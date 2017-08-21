@@ -1,8 +1,76 @@
-//.sidenav-scrollbar-container {
-//  height: 100%;
-//}
-//
-//.cdk-focus-trap-content, md-sidenav {
-//  overflow-y: hidden !important;
-//  overflow-x: hidden;
-//}
+@import "../../../styles/constants";
+
+.sidenav-container {
+  width: 15rem;
+  min-width: 15rem;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  -webkit-transition: all .3s cubic-bezier(.35,0,.25,1);
+  transition: all .3s cubic-bezier(.35,0,.25,1);
+  .navigation-warper {
+    position: relative;
+    padding-top: 64px;
+    background: rgba(255, 255, 255, .95);
+    height: 100%;
+    -webkit-transition: all .3s cubic-bezier(.35, 0, .25, 1);
+    transition: all .3s cubic-bezier(.35, 0, .25, 1);
+
+    .branding {
+      z-index: $layer-last;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      max-width: 15rem;
+      height: 64px;
+      line-height: 64px;
+      top: 0;
+      left: 0;
+      color: #444;
+
+      .app-logo {
+        width: auto;
+        height: 22px;
+        margin-right: 8px;
+      }
+
+      .app-logo-text {
+        width: auto;
+        height: 20px;
+      }
+    }
+
+
+    .app-user {
+      text-align: center;
+      width: 100%;
+      padding: 1rem 0 .4rem;
+
+      .app-user-photo {
+        width: 64px;
+        margin: 0 auto 8px;
+        height: 64px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+      }
+
+      .app-user-name {
+        font-size: .875rem;
+        font-weight: 300;
+        color: rgba(0, 0, 0, .96);
+        margin-left: -2px;
+        md-icon {
+          font-size: 13px !important;
+          line-height: 13px;
+          height: 13px;
+          width: 13px;
+        }
+      }
+    }
+  }
+}

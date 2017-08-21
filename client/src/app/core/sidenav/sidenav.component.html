@@ -1,7 +1,42 @@
 <div class="sidenav-container">
-  <div class="sidenav-scrollbar-container" fxLayout="column">
-    <md-nav-list fxLayout="column" class="sidenav-list sidenav-toplevel">
-      <!--<ms-sidenav-item ></ms-sidenav-item>-->
-    </md-nav-list>
+  <div class="navigation-warper" [perfect-scrollbar]="config" fxLayout="column">
+    <md-toolbar class="branding" color="primary">
+      <img src="assets/images/logo.png" alt="" class="app-logo">
+      <img src="assets/images/logo-text.png" alt="" class="app-logo-text">
+    </md-toolbar>
+
+    <div class="app-user">
+      <div class="app-user-photo">
+        <img src="assets/images/avatar.png" alt="">
+      </div>
+      <span class="app-user-name">
+        <md-icon class="text-muted">people</md-icon>
+        <!--{{ iamground.name || transaction}}-->
+    </span>
+    </div>
+
+    <div>
+      <md-nav-list fxLayout="column" class="sidenav-list sidenav-toplevel">
+        <!--<ms-sidenav-item ></ms-sidenav-item>-->
+      </md-nav-list>
+    </div>
   </div>
 </div>
+
+
+<!--<div id="scroll-area" class="navigation-hold" fxLayout="column">-->
+  <!--<div class="branding mat-bg-primary">-->
+    <!--<img src="assets/images/logo.png" alt="" class="app-logo">-->
+    <!--<img src="assets/images/logo-text.png" alt="" class="app-logo-text">-->
+  <!--</div>-->
+  <!--<div class="app-user">-->
+    <!--<div class="app-user-photo">-->
+      <!--<img src="assets/images/face-7.jpg" alt="">-->
+    <!--</div>-->
+    <!--<span class="app-user-name">-->
+          <!--<md-icon class="icon-xs text-muted">lock</md-icon>-->
+          <!--Watson Joyce-->
+        <!--</span>-->
+  <!--</div>-->
+  <!--<navigation></navigation>-->
+<!--</div>-->

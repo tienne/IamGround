@@ -1,7 +1,7 @@
 <md-sidenav-container [ngClass]="themeName">
 
   <div *ngIf="isFetching" class="progress-bar-container">
-    <md-progress-bar mode="indeterminate" color="warn"></md-progress-bar>
+    <md-progress-bar mode="indeterminate" color="accent"></md-progress-bar>
   </div>
 
   <app-toolbar [quickpanel]="quickpanel" [sidenav]="sidenav"></app-toolbar>
@@ -10,7 +10,7 @@
 
   </md-sidenav>
 
-  <md-sidenav class="sidenav" [opened]="sidenavOpen" align="start" [mode]="sidenavMode" #sidenav>
+  <md-sidenav class="sidenav" [opened]="!isNavOver()" align="start" [mode]="isNavOver() ? 'over' : 'side'" #sidenav>
 
     <app-sidenav></app-sidenav>
 

@@ -35,6 +35,7 @@
     "electron-connect": "^0.6.2",
     "electron-packager": "^8.7.2",
     "hammerjs": "^2.0.8",
+    "ngx-perfect-scrollbar": "^4.5.5",
     "normalize.css": "^7.0.0",
     "outdated-browser-rework": "^1.0.2",
     "rxjs": "^5.4.3",

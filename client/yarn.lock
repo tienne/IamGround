@@ -3645,6 +3645,12 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
+ngx-perfect-scrollbar@^4.5.5:
+  version "4.5.5"
+  resolved "https://registry.yarnpkg.com/ngx-perfect-scrollbar/-/ngx-perfect-scrollbar-4.5.5.tgz#55b1563bbc09da2d26f491b7bc1dd6663b23bcce"
+  dependencies:
+    perfect-scrollbar "^0.7.1"
+
 no-case@^2.2.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/no-case/-/no-case-2.3.1.tgz#7aeba1c73a52184265554b7dc03baf720df80081"
@@ -4102,6 +4108,10 @@ pbkdf2@^3.0.3:
 pend@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/pend/-/pend-1.2.0.tgz#7a57eb550a6783f9115331fcf4663d5c8e007a50"
+
+perfect-scrollbar@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/perfect-scrollbar/-/perfect-scrollbar-0.7.1.tgz#0c256fb9c5cee401d60a299687a3f9a61487e0d5"
 
 performance-now@^0.2.0:
   version "0.2.0"

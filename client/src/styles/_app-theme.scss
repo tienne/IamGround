@@ -48,24 +48,16 @@
   .sidebar-panel.mat-sidenav {
     //background: url('../../images/sidebar-bg-dark.jpg') no-repeat;
   }
-  .app-user .app-user-name,
-  .sidebar-panel.mat-sidenav .sidebar-list-item md-icon:not(.menu-caret),
-  .ql-snow .ql-picker {
-    color: white !important;
-  }
-  .text-muted {
-    color: rgba(255, 255, 255, .54) !important;
-  }
 
-  .ql-snow .ql-stroke  {
-    stroke: #ffffff;
-  }
-  .ql-snow .ql-fill {
-    fill: #ffffff;
-  }
-  .ql-toolbar.ql-snow,
-  .ql-toolbar.ql-snow + .ql-container.ql-snow {
-    border-color: rgba(255, 255, 255, 0.12) !important;
+  @if($isDark) {
+    .app-user .app-user-name,
+    .sidebar-panel.mat-sidenav .sidebar-list-item md-icon:not(.menu-caret),
+    .ql-snow .ql-picker {
+      color: white !important;
+    }
+    .text-muted {
+      color: rgba(255, 255, 255, .54) !important;
+    }
   }
 
   .sidebar-panel.mat-sidenav .navigation-hold,

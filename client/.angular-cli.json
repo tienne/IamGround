@@ -25,11 +25,11 @@
         "../node_modules/normalize.css/normalize.css",
         "styles.scss",
         {
-  "input": "assets/styles/themes/app-dark-pink.scss",
-  "lazy": true,
-  "path": "/Users/david/work/resume/client/src/assets/styles/themes/app-dark-pink.scss",
-  "entry": "assets/styles/themes/app-dark-pink"
-}
+          "input": "assets/styles/themes/app-dark-pink.scss",
+          "lazy": true,
+          "path": "/Users/david/work/resume/client/src/assets/styles/themes/app-dark-pink.scss",
+          "entry": "assets/styles/themes/app-dark-pink"
+        }
       ],
       "scripts": [
         "../node_modules/hammerjs/hammer.js"

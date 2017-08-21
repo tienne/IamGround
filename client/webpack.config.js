@@ -15,7 +15,7 @@ const { AotPlugin } = require('@ngtools/webpack');
 const nodeModules = path.join(process.cwd(), 'node_modules');
 const realNodeModules = fs.realpathSync(nodeModules);
 const genDirNodeModules = path.join(process.cwd(), 'src', '$$_gendir', 'node_modules');
-const entryPoints = ["inline","polyfills","sw-register","scripts","styles", "assets/styles/themes/app-dark-pink" ,"vendor","main"];
+const entryPoints = ["inline","polyfills","sw-register","scripts","styles", "vendor","main"];
 const minimizeCss = false;
 const baseHref = "";
 const deployUrl = "";
@@ -90,9 +90,10 @@ module.exports = {
       "./node_modules/normalize.css/normalize.css",
       "./src/styles.scss"
     ],
-    "assets/styles/themes/app-dark-pink": [
-      "./src/assets/styles/themes/app-dark-pink.scss"
-    ]
+    // "themes": [
+    //   "./src/assets/styles/themes/app-dark-pink.scss",
+    //   "./src/assets/styles/themes/app-orange.scss"
+    // ]
   },
   "output": {
     "path": path.join(process.cwd(), "dist"),
@@ -125,7 +126,8 @@ module.exports = {
         "exclude": [
           path.join(process.cwd(), "node_modules/normalize.css/normalize.css"),
           path.join(process.cwd(), "src/styles.scss"),
-          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss")
+          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss"),
+          path.join(process.cwd(), "src/assets/styles/themes/app-orange.scss")
         ],
         "test": /\.css$/,
         "use": [
@@ -150,7 +152,8 @@ module.exports = {
         "exclude": [
           path.join(process.cwd(), "node_modules/normalize.css/normalize.css"),
           path.join(process.cwd(), "src/styles.scss"),
-          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss")
+          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss"),
+          path.join(process.cwd(), "src/assets/styles/themes/app-orange.scss")
         ],
         "test": /\.scss$|\.sass$/,
         "use": [
@@ -183,7 +186,8 @@ module.exports = {
         "exclude": [
           path.join(process.cwd(), "node_modules/normalize.css/normalize.css"),
           path.join(process.cwd(), "src/styles.scss"),
-          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss")
+          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss"),
+          path.join(process.cwd(), "src/assets/styles/themes/app-orange.scss")
         ],
         "test": /\.less$/,
         "use": [
@@ -214,7 +218,8 @@ module.exports = {
         "exclude": [
           path.join(process.cwd(), "node_modules/normalize.css/normalize.css"),
           path.join(process.cwd(), "src/styles.scss"),
-          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss")
+          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss"),
+          path.join(process.cwd(), "src/assets/styles/themes/app-orange.scss")
         ],
         "test": /\.styl$/,
         "use": [
@@ -246,7 +251,8 @@ module.exports = {
         "include": [
           path.join(process.cwd(), "node_modules/normalize.css/normalize.css"),
           path.join(process.cwd(), "src/styles.scss"),
-          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss")
+          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss"),
+          path.join(process.cwd(), "src/assets/styles/themes/app-orange.scss")
         ],
         "test": /\.css$/,
         "use": [
@@ -271,7 +277,8 @@ module.exports = {
         "include": [
           path.join(process.cwd(), "node_modules/normalize.css/normalize.css"),
           path.join(process.cwd(), "src/styles.scss"),
-          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss")
+          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss"),
+          path.join(process.cwd(), "src/assets/styles/themes/app-orange.scss")
         ],
         "test": /\.scss$|\.sass$/,
         "use": [
@@ -304,7 +311,8 @@ module.exports = {
         "include": [
           path.join(process.cwd(), "node_modules/normalize.css/normalize.css"),
           path.join(process.cwd(), "src/styles.scss"),
-          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss")
+          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss"),
+          path.join(process.cwd(), "src/assets/styles/themes/app-orange.scss")
         ],
         "test": /\.less$/,
         "use": [
@@ -335,7 +343,8 @@ module.exports = {
         "include": [
           path.join(process.cwd(), "node_modules/normalize.css/normalize.css"),
           path.join(process.cwd(), "src/styles.scss"),
-          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss")
+          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss"),
+          path.join(process.cwd(), "src/assets/styles/themes/app-orange.scss")
         ],
         "test": /\.styl$/,
         "use": [
@@ -401,7 +410,6 @@ module.exports = {
       "showErrors": true,
       "chunks": "all",
       "excludeChunks": [
-        "assets/styles/themes/app-dark-pink"
       ],
       "title": "Webpack App",
       "xhtml": true,
