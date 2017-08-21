@@ -1,10 +1,10 @@
-<md-sidenav-container #layout>
+<md-sidenav-container [ngClass]="themeName">
 
   <div *ngIf="isFetching" class="progress-bar-container">
     <md-progress-bar mode="indeterminate" color="warn"></md-progress-bar>
   </div>
 
-  <app-toolbar [quickpanel]="quickpanel" [sidenav]="sidenav" class="fixed-header"></app-toolbar>
+  <app-toolbar [quickpanel]="quickpanel" [sidenav]="sidenav"></app-toolbar>
 
   <md-sidenav class="quickpanel" [opened]="quickpanelOpen" align="end" mode="over" #quickpanel>
 
@@ -16,7 +16,7 @@
 
   </md-sidenav>
 
-  <div class="content-container" fxLayout="column">
+  <div class="content-container">
 
     <div class="main-container" >
       <router-outlet></router-outlet>

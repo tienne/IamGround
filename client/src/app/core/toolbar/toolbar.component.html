@@ -1,5 +1,22 @@
-<md-toolbar color="primary">
-  <span>I Am Ground</span>
-  <span class="toolbar-spacer"></span>
-  <md-icon>settings</md-icon>
+<md-toolbar color="primary" fxLayout="row">
+  <!-- 토글 버튼 -->
+  <button md-icon-button id="sidenavToggle" (click)="toggleSidenav()" mdTooltip="메뉴">
+    <md-icon>menu</md-icon>
+  </button>
+
+  <span class="flex-spacer"></span>
+
+  <!-- 언어 변경 -->
+  <md-select placeholder="" name="currentLang" [(ngModel)]="currentLang" (change)="setLang()">
+    <md-option *ngFor="let lang of availableLangs" [value]="lang.code" ngDefaultControl>{{ lang.name }}</md-option>
+  </md-select>
+
+  <!-- 테마 변경 -->
+  <app-theme></app-theme>
+
+  <a md-button href="https://github.com/tienne" aria-label="GitHub Profile" mdTooltip="Github 프로필">
+    <img class="docs-github-logo" src="../../../assets/images/github-circle-white-transparent.svg" alt="GitHub">
+    GitHub
+  </a>
+
 </md-toolbar>

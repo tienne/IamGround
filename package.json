@@ -1,5 +1,5 @@
 {
-  "name": "resume",
+  "name": "iamground",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/tienne/resume/issues"
   },
-  "homepage": "https://github.com/tienne/resume#readme"
+  "homepage": "https://github.com/tienne/resume#readme",
+  "devDependencies": {
+    "angular-hot-loader": "^0.9.10"
+  }
 }

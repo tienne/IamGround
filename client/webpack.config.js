@@ -1,20 +1,21 @@
 const fs = require('fs');
 const path = require('path');
 const ProgressPlugin = require('webpack/lib/ProgressPlugin');
+const CircularDependencyPlugin = require('circular-dependency-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const postcssUrl = require('postcss-url');
 const cssnano = require('cssnano');
 
 const { NoEmitOnErrorsPlugin, SourceMapDevToolPlugin, NamedModulesPlugin } = require('webpack');
-const { GlobCopyWebpackPlugin, BaseHrefWebpackPlugin } = require('@angular/cli/plugins/webpack');
+const { GlobCopyWebpackPlugin, NamedLazyChunksWebpackPlugin, BaseHrefWebpackPlugin } = require('@angular/cli/plugins/webpack');
 const { CommonsChunkPlugin } = require('webpack').optimize;
 const { AotPlugin } = require('@ngtools/webpack');
 
 const nodeModules = path.join(process.cwd(), 'node_modules');
 const realNodeModules = fs.realpathSync(nodeModules);
 const genDirNodeModules = path.join(process.cwd(), 'src', '$$_gendir', 'node_modules');
-const entryPoints = ["inline","polyfills","sw-register","styles","vendor","main"];
+const entryPoints = ["inline","polyfills","sw-register","scripts","styles", "assets/styles/themes/app-dark-pink" ,"vendor","main"];
 const minimizeCss = false;
 const baseHref = "";
 const deployUrl = "";
@@ -82,9 +83,15 @@ module.exports = {
     "polyfills": [
       "./src/polyfills.ts"
     ],
+    "scripts": [
+      "script-loader!./node_modules/hammerjs/hammer.js"
+    ],
     "styles": [
       "./node_modules/normalize.css/normalize.css",
       "./src/styles.scss"
+    ],
+    "assets/styles/themes/app-dark-pink": [
+      "./src/assets/styles/themes/app-dark-pink.scss"
     ]
   },
   "output": {
@@ -117,7 +124,8 @@ module.exports = {
       {
         "exclude": [
           path.join(process.cwd(), "node_modules/normalize.css/normalize.css"),
-          path.join(process.cwd(), "src/styles.scss")
+          path.join(process.cwd(), "src/styles.scss"),
+          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss")
         ],
         "test": /\.css$/,
         "use": [
@@ -141,7 +149,8 @@ module.exports = {
       {
         "exclude": [
           path.join(process.cwd(), "node_modules/normalize.css/normalize.css"),
-          path.join(process.cwd(), "src/styles.scss")
+          path.join(process.cwd(), "src/styles.scss"),
+          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss")
         ],
         "test": /\.scss$|\.sass$/,
         "use": [
@@ -173,7 +182,8 @@ module.exports = {
       {
         "exclude": [
           path.join(process.cwd(), "node_modules/normalize.css/normalize.css"),
-          path.join(process.cwd(), "src/styles.scss")
+          path.join(process.cwd(), "src/styles.scss"),
+          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss")
         ],
         "test": /\.less$/,
         "use": [
@@ -203,7 +213,8 @@ module.exports = {
       {
         "exclude": [
           path.join(process.cwd(), "node_modules/normalize.css/normalize.css"),
-          path.join(process.cwd(), "src/styles.scss")
+          path.join(process.cwd(), "src/styles.scss"),
+          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss")
         ],
         "test": /\.styl$/,
         "use": [
@@ -234,7 +245,8 @@ module.exports = {
       {
         "include": [
           path.join(process.cwd(), "node_modules/normalize.css/normalize.css"),
-          path.join(process.cwd(), "src/styles.scss")
+          path.join(process.cwd(), "src/styles.scss"),
+          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss")
         ],
         "test": /\.css$/,
         "use": [
@@ -258,7 +270,8 @@ module.exports = {
       {
         "include": [
           path.join(process.cwd(), "node_modules/normalize.css/normalize.css"),
-          path.join(process.cwd(), "src/styles.scss")
+          path.join(process.cwd(), "src/styles.scss"),
+          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss")
         ],
         "test": /\.scss$|\.sass$/,
         "use": [
@@ -290,7 +303,8 @@ module.exports = {
       {
         "include": [
           path.join(process.cwd(), "node_modules/normalize.css/normalize.css"),
-          path.join(process.cwd(), "src/styles.scss")
+          path.join(process.cwd(), "src/styles.scss"),
+          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss")
         ],
         "test": /\.less$/,
         "use": [
@@ -320,7 +334,8 @@ module.exports = {
       {
         "include": [
           path.join(process.cwd(), "node_modules/normalize.css/normalize.css"),
-          path.join(process.cwd(), "src/styles.scss")
+          path.join(process.cwd(), "src/styles.scss"),
+          path.join(process.cwd(), "src/assets/styles/themes/app-dark-pink.scss")
         ],
         "test": /\.styl$/,
         "use": [
@@ -359,7 +374,8 @@ module.exports = {
     new GlobCopyWebpackPlugin({
       "patterns": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "meta"
       ],
       "globOptions": {
         "cwd": path.join(process.cwd(), "src"),
@@ -368,6 +384,11 @@ module.exports = {
       }
     }),
     new ProgressPlugin(),
+    new CircularDependencyPlugin({
+      "exclude": /(\\|\/)node_modules(\\|\/)/,
+      "failOnError": false
+    }),
+    new NamedLazyChunksWebpackPlugin(),
     new HtmlWebpackPlugin({
       "template": "./src/index.html",
       "filename": "./index.html",
@@ -379,7 +400,9 @@ module.exports = {
       "cache": true,
       "showErrors": true,
       "chunks": "all",
-      "excludeChunks": [],
+      "excludeChunks": [
+        "assets/styles/themes/app-dark-pink"
+      ],
       "title": "Webpack App",
       "xhtml": true,
       "chunksSortMode": function sort(left, right) {
@@ -397,10 +420,6 @@ module.exports = {
     }
     }),
     new BaseHrefWebpackPlugin({}),
-    new CommonsChunkPlugin({
-      "minChunks": 2,
-      "async": "common"
-    }),
     new CommonsChunkPlugin({
       "name": [
         "inline"
@@ -427,9 +446,17 @@ module.exports = {
       "fallbackModuleFilenameTemplate": "[resource-path]?[hash]",
       "sourceRoot": "webpack:///"
     }),
+    new CommonsChunkPlugin({
+      "name": [
+        "main"
+      ],
+      "minChunks": 2,
+      "async": "common"
+    }),
     new NamedModulesPlugin({}),
     new AotPlugin({
       "mainPath": "main.ts",
+      "replaceExport": false,
       "hostReplacementPaths": {
         "environments/environment.ts": "environments/environment.ts"
       },

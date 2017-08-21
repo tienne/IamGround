@@ -1,31 +1,31 @@
-@import '../app-theme';
+@import '../../../styles/app-theme';
 
-$md-primary: (
-  50 : #fef6ed,
-  100 : #fce8d3,
-  200 : #fbd9b5,
-  300 : #f9c997,
-  400 : #f7be81,
-  500 : #f6b26b,
-  600 : #f5ab63,
-  700 : #f3a258,
-  800 : #f2994e,
-  900 : #ef8a3c,
+$dark-pink-md-primary: (
+  50 : #fce4ec,
+  100 : #f8bcd0,
+  200 : #f48fb1,
+  300 : #f06292,
+  400 : #ec407a,
+  500 : #e91e63,
+  600 : #e61a5b,
+  700 : #e31651,
+  800 : #df1247,
+  900 : #d90a35,
   A100 : #ffffff,
-  A200 : #ffffff,
-  A400 : #ffe7d5,
-  A700 : #ffd8bc,
+  A200 : #ffd0d8,
+  A400 : #ff9dae,
+  A700 : #ff8498,
   contrast: (
     50 : #000000,
     100 : #000000,
     200 : #000000,
     300 : #000000,
-    400 : #fff,
-    500 : #fff,
-    600 : #fff,
-    700 : #fff,
-    800 : #fff,
-    900 : #fff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
     A100 : #000000,
     A200 : #000000,
     A400 : #000000,
@@ -33,7 +33,7 @@ $md-primary: (
   )
 );
 
-$md-accent: (
+$dark-pink-md-accent: (
   50 : #eceff1,
   100 : #cfd8dc,
   200 : #b0bec5,
@@ -66,6 +66,5 @@ $md-accent: (
   )
 );
 
-.iam-app-orange {
-  @include app-theme($md-primary, $md-accent, false);
-}
+@include app-theme($dark-pink-md-primary, $dark-pink-md-accent, true);
+

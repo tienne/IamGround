@@ -1,17 +1,25 @@
 @import '~@angular/material/theming';
 
 @mixin app-theme($md-primary, $md-accent, $isDark) {
+
+  @include mat-core();
+
   $app-primary: mat-palette($md-primary);
   $app-accent:  mat-palette($md-accent);
-
-  $theme: if($isDark, mat-dark-theme($app-primary, $app-accent), mat-light-theme($app-primary, $app-accent));
+  $themeDark: mat-dark-theme($app-primary, $app-accent);
+  $theme: mat-light-theme($app-primary, $app-accent);
 
   $primary-dark: darken( map-get($md-primary, 500), 8% );
-  @include angular-material-theme($theme);
+  @include angular-material-theme(if($isDark, $themeDark, $theme));
 
+  //toolbar 처리 시작
+  app-toolbar .mat-select-value {
+    font-weight: 400;
+    color: #ffffff;
+  }
 
   .mat-bg-primary,
-  .topbar,
+  .app-toolbar,
   .sidebar-panel.mat-sidenav .sidebar-list-item.open md-icon:not(.menu-caret),
   .chats-wrap .conversations-hold .single-conversation.me .conversation-msg,
   .ngx-datatable .datatable-footer .datatable-pager .pager .pages.active a,

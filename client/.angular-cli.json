@@ -23,9 +23,17 @@
       "serviceWorker": true,
       "styles": [
         "../node_modules/normalize.css/normalize.css",
-        "styles.scss"
+        "styles.scss",
+        {
+  "input": "assets/styles/themes/app-dark-pink.scss",
+  "lazy": true,
+  "path": "/Users/david/work/resume/client/src/assets/styles/themes/app-dark-pink.scss",
+  "entry": "assets/styles/themes/app-dark-pink"
+}
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/hammerjs/hammer.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -59,8 +67,8 @@
     "styleExt": "scss",
     "component": {
     },
-    "serve": {
-      "port": 6158
+    "service": {
+      "flat": false
     }
   }
 }

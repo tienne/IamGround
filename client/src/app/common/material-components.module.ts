@@ -8,6 +8,7 @@ import {
   MdSliderModule,
   MdSlideToggleModule, MdSnackBarModule, MdTabsModule, MdToolbarModule, MdTooltipModule
 } from '@angular/material';
+import 'hammerjs';
 
 @NgModule({
   imports: [

@@ -3,19 +3,23 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 // app
+import { MaterialComponentsModule } from '../common/material-components.module';
 import { LayoutComponent } from './layout/layout.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-
-import { MaterialComponentsModule } from '../common/material-components.module';
 import { SidenavComponent } from './sidenav/sidenav.component';
+// app module
+import { ThemeModule } from './theme/theme.module';
 
 @NgModule({
   imports: [
     MaterialComponentsModule,
+    FormsModule,
     CommonModule,
     RouterModule,
-    TranslateModule
+    TranslateModule,
+    ThemeModule
   ],
   declarations: [
     ToolbarComponent,
@@ -24,6 +28,6 @@ import { SidenavComponent } from './sidenav/sidenav.component';
   ],
   exports: [
     LayoutComponent
-  ]
+  ],
 })
 export class CoreModule { }

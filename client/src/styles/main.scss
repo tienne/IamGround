@@ -1,3 +1,5 @@
+@import '~@angular/material/theming';
+
 //전역 변수 포함
 @import './constants';
 
@@ -7,5 +9,4 @@
 @import 'base/index';
 
 //theme 처리
-@import 'themes/app-orange';
-@import 'themes/app-dark-pink';
+@import '../assets/styles/themes/app-orange';
