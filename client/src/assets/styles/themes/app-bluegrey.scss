@@ -1,0 +1,69 @@
+@import '../../../styles/app-theme';
+
+$md-primary: (
+  50 : #eceff1,
+  100 : #cfd8dc,
+  200 : #b0bec5,
+  300 : #90a4ae,
+  400 : #78919c,
+  500 : #607d8b,
+  600 : #587583,
+  700 : #4e6a78,
+  800 : #44606e,
+  900 : #334d5b,
+  A100 : #abe1ff,
+  A200 : #78ceff,
+  A400 : #45bcff,
+  A700 : #2bb3ff,
+  contrast: (
+    50 : #000000,
+    100 : #ffffff,
+    200 : #ffffff,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$md-accent: (
+  50 : #eaedff,
+  100 : #cbd3ff,
+  200 : #a9b6ff,
+  300 : #8799fe,
+  400 : #6d83fe,
+  500 : #536dfe,
+  600 : #4c65fe,
+  700 : #425afe,
+  800 : #3950fe,
+  900 : #293efd,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #d4d8ff,
+  A700 : #bbc1ff,
+  contrast: (
+    50 : #000000,
+    100 : #ffffff,
+    200 : #ffffff,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+@include app-theme($md-primary, $md-accent, false);

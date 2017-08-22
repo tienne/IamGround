@@ -28,18 +28,19 @@
       top: 0;
       left: 0;
       color: #444;
-      a {
-        align-items: stretch;
-      }
-      .app-logo {
-        width: auto;
-        height: 50px;
-        margin-right: 8px;
-      }
+      .logo-btn {
+        height: 100%;
 
-      .app-logo-text {
-        width: auto;
-        height: 35px;
+        .app-logo {
+          width: auto;
+          height: 50px;
+          margin-right: 8px;
+        }
+
+        .app-logo-text {
+          width: auto;
+          height: 35px;
+        }
       }
     }
 

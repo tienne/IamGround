@@ -17,13 +17,25 @@ export class ThemeComponent {
       accent: '#607d8b',
       href: 'dark-pink.css',
       isDark: true,
+      isDefault: true,
     },
     {
       primary: '#f6b26b',
       accent: '#607d8b',
-      href: 'orange.css',
-      isDark: false,
-      isDefault: true,
+      href: 'dark-orange.css',
+      isDark: true
+    },
+    {
+      primary: '#00bcd4',
+      accent: '#ff5722',
+      href: 'cyan.css',
+      isDark: false
+    },
+    {
+      primary: '#607D8B',
+      accent: '#536DFE',
+      href: 'bluegrey.css',
+      isDark: false
     }
   ];
 

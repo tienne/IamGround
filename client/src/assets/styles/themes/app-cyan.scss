@@ -1,0 +1,69 @@
+@import '../../../styles/app-theme';
+
+$cyan-md-primary: (
+  50 : #e0f7fa,
+  100 : #b3ebf2,
+  200 : #80deea,
+  300 : #4dd0e1,
+  400 : #26c6da,
+  500 : #00bcd4,
+  600 : #00b6cf,
+  700 : #00adc9,
+  800 : #00a5c3,
+  900 : #0097b9,
+  A100 : #e2f9ff,
+  A200 : #afeeff,
+  A400 : #7ce3ff,
+  A700 : #63ddff,
+  contrast: (
+    50 : #000000,
+    100 : #ffffff,
+    200 : #ffffff,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$cyan-md-accent: (
+  50 : #ffebe4,
+  100 : #ffcdbd,
+  200 : #ffab91,
+  300 : #ff8964,
+  400 : #ff7043,
+  500 : #ff5722,
+  600 : #ff4f1e,
+  700 : #ff4619,
+  800 : #ff3c14,
+  900 : #ff2c0c,
+  A100 : #ffffff,
+  A200 : #fff7f6,
+  A400 : #ffc9c3,
+  A700 : #ffb2a9,
+  contrast: (
+    50 : #000000,
+    100 : #ffffff,
+    200 : #ffffff,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+@include app-theme($cyan-md-primary, $cyan-md-accent, false);
