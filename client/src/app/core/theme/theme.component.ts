@@ -45,7 +45,7 @@ export class ThemeComponent {
     if (theme.isDefault) {
       this.styleManager.removeStyle('theme');
     } else {
-      this.styleManager.setStyle('theme', `assets/styles/themes/app-${theme.href}`);
+      this.styleManager.setStyle('theme', `assets/styles/app-${theme.href}`);
     }
 
     if (this.currentTheme) {

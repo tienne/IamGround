@@ -1,4 +1,4 @@
-@import '~@angular/material/theming';
+@import '../../node_modules/@angular/material/theming';
 
 @mixin app-theme($md-primary, $md-accent, $isDark) {
 
@@ -20,7 +20,7 @@
 
   .mat-bg-primary,
   .app-toolbar,
-  .sidebar-panel.mat-sidenav .sidebar-list-item.open md-icon:not(.menu-caret),
+  .sidenav.mat-sidenav .sidebar-list-item.open md-icon:not(.menu-caret),
   .chats-wrap .conversations-hold .single-conversation.me .conversation-msg,
   .ngx-datatable .datatable-footer .datatable-pager .pager .pages.active a,
   .fileupload-drop-zone.dz-file-over,
@@ -31,45 +31,44 @@
     color: #ffffff !important;
   }
   .mat-color-primary,
-  .sidebar-panel.mat-sidenav .sidebar-list-item.open > .mat-list-item-content > a > span,
-  .sidebar-panel.mat-sidenav .sidebar-list-item.open .sub-menu .mat-list-item.selected a {
+  .sidenav.mat-sidenav .sidebar-list-item.open > .mat-list-item-content > a > span,
+  .sidenav.mat-sidenav .sidebar-list-item.open .sub-menu .mat-list-item.selected a {
     color: map-get($md-primary, 500) !important;
   }
-  .sidebar-panel.mat-sidenav .sidebar-list-item.open > .mat-list-item-content > a > span,
-  .sidebar-panel.mat-sidenav .sidebar-list-item.open .sub-menu .mat-list-item.selected a {
+  .sidenav.mat-sidenav .sidebar-list-item.open > .mat-list-item-content > a > span,
+  .sidenav.mat-sidenav .sidebar-list-item.open .sub-menu .mat-list-item.selected a {
     font-weight: 500;
   }
-  .sidebar-panel.mat-sidenav .sidebar-list-item.open > .mat-list-item-content > .sub-menu {
+  .sidenav.mat-sidenav .sidebar-list-item.open > .mat-list-item-content > .sub-menu {
     border-left: 2px solid map-get($md-primary, 500);
   }
   .messages-wrap .inbox-hold {
     background: transparent !important;
   }
-  .sidebar-panel.mat-sidenav {
+  .sidenav.mat-sidenav {
     //background: url('../../images/sidebar-bg-dark.jpg') no-repeat;
   }
 
-  @if($isDark) {
-    .app-user .app-user-name,
-    .sidebar-panel.mat-sidenav .sidebar-list-item md-icon:not(.menu-caret),
-    .ql-snow .ql-picker {
-      color: white !important;
-    }
-    .text-muted {
-      color: rgba(255, 255, 255, .54) !important;
-    }
+  .app-user .app-user-name,
+  .sidenav.mat-sidenav .sidebar-list-item md-icon:not(.menu-caret),
+  .ql-snow .ql-picker {
+    color: if($isDark, white, rgba(0, 0, 0, .96)) !important;
   }
 
-  .sidebar-panel.mat-sidenav .navigation-hold,
+  .text-muted {
+    color: if($isDark, rgba(255, 255, 255, .54), rgba(0, 0, 0, .54)) !important;
+  }
+
+  .sidenav.mat-sidenav .navigation-warper,
   .message-item.open .message-head,
   .ngx-datatable.material .datatable-header,
   .bg-white,
   .cal-month-view .cal-cell-row:hover,
   .chats-wrap .conversations-hold .single-conversation.sender .conversation-msg,
   .cal-day-view .cal-hour:nth-child(odd),
-  &.collapsed-menu .sidebar-panel .sidebar-list-item.open .sub-menu,
+  &.collapsed-menu .sidenav .sidebar-list-item.open .sub-menu,
   .breadcrumb-bar {
-    background: rgba(66, 66, 66, 0.92) !important;
+    background: if($isDark, rgba(66, 66, 66, 0.92), rgba(255, 255, 255, .95)) !important;
   }
   .cal-month-view .cal-cell-row .cal-cell:hover,
   .cal-month-view .cal-cell.cal-has-events.cal-open,

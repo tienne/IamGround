@@ -19,7 +19,8 @@ export class LayoutComponent implements OnInit {
   url;
 
   constructor(private router: Router) {
-    this.themeName = 'iam-app-dark-pink';
+    console.log('layout constructor');
+    this.themeName = 'iam-app-orange';
     router.events.filter(event => event instanceof NavigationEnd).subscribe((routeChange: NavigationEnd) => {
       this.url = routeChange.url;
       if (this.isNavOver()) {
@@ -32,11 +33,6 @@ export class LayoutComponent implements OnInit {
   }
 
   isNavOver() {
-
-    if (this.url === '/inbox') {
-      return true;
-    } else {
-      return window.matchMedia(`(max-width: 960px)`).matches;
-    }
+    return window.matchMedia(`(max-width: 960px)`).matches;
   }
 }
