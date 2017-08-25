@@ -372,7 +372,8 @@ module.exports = {
       "patterns": [
         "assets",
         "favicon.ico",
-        "meta"
+        "meta",
+        "manifest.json"
       ],
       "globOptions": {
         "cwd": path.join(process.cwd(), "src"),

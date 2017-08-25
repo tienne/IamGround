@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { LayoutComponent } from './core/layout/layout.component'
+import { LayoutComponent } from './core/layout/layout.component';
 
 /**
  * Define app module routes here, e.g., to lazily load a module
