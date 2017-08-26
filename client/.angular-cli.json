@@ -1,8 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "iamground",
-    "ejected": true
+    "name": "iamground"
   },
   "apps": [
     {
@@ -24,12 +23,10 @@
       "styles": [
         "../node_modules/normalize.css/normalize.css",
         "styles.scss",
-        {
-          "input": "assets/styles/themes/app-dark-pink.scss",
-          "lazy": true,
-          "path": "/Users/david/work/resume/client/src/assets/styles/themes/app-dark-pink.scss",
-          "entry": "assets/styles/themes/app-dark-pink"
-        }
+        {"input": "assets/styles/app-bluegrey.css", "lazy": true},
+        {"input": "assets/styles/app-cyan.css", "lazy": true},
+        {"input": "assets/styles/app-dark-orange.css", "lazy": true},
+        {"input": "assets/styles/app-dark-pink.css", "lazy": true}
       ],
       "scripts": [
         "../node_modules/hammerjs/hammer.js"
@@ -69,6 +66,9 @@
     },
     "service": {
       "flat": false
+    },
+    "serve": {
+      "port": 6158
     }
   }
 }
