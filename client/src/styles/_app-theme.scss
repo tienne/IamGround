@@ -3,19 +3,27 @@
 @mixin app-theme($md-primary, $md-accent, $isDark) {
 
   @include mat-core();
-
+  $primary-dark: darken( map-get($md-primary, 500), 8% );
   $app-primary: mat-palette($md-primary);
   $app-accent:  mat-palette($md-accent);
+
   $themeDark: mat-dark-theme($app-primary, $app-accent);
   $theme: mat-light-theme($app-primary, $app-accent);
 
-  $primary-dark: darken( map-get($md-primary, 500), 8% );
+  $background: map-get(if($isDark, $themeDark, $theme), background);
+  $foreground: map-get(if($isDark, $themeDark, $theme), foreground);
+
   @include angular-material-theme(if($isDark, $themeDark, $theme));
 
   //toolbar 처리 시작
   app-toolbar .mat-select-value {
     font-weight: 400;
     color: #ffffff;
+  }
+
+  .not-found-wrapper {
+    background: mat-color($background, background);
+    color: mat-color($foreground, base);
   }
 
   .mat-bg-primary,

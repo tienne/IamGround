@@ -1,7 +1,6 @@
 const path = require('path');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-const sassImporter = require('sass-module-importer');
 
 const config = {
   src: path.join(__dirname, 'src'),

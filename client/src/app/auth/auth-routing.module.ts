@@ -1,16 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { IamComponent } from './iam/iam.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
-    path: '',
-    pathMatch: 'prefix',
-    redirectTo: 'iam'
-  },
-  {
-    path: 'iam',
-    component: IamComponent
+    path: 'login',
+    component: LoginComponent
   }
 ];
 
@@ -18,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PagesRoutingModule { }
+export class AuthRoutingModule { }
