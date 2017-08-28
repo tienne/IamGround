@@ -57,7 +57,7 @@
     //background: url('../../images/sidebar-bg-dark.jpg') no-repeat;
   }
 
-  .app-user .app-user-name,
+  .app-user .user-info,
   .sidenav.mat-sidenav .sidebar-list-item md-icon:not(.menu-caret),
   .ql-snow .ql-picker {
     color: if($isDark, white, rgba(0, 0, 0, .96)) !important;

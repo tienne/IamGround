@@ -15,6 +15,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 // app module
 import { ThemeModule } from './theme/theme.module';
 import { I18nModule } from './i18n/i18n.module';
+import { LocationService } from '../shared/location/location.service';
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -40,5 +41,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   exports: [
     LayoutComponent
   ],
+  providers: [
+    LocationService
+  ]
 })
 export class CoreModule { }

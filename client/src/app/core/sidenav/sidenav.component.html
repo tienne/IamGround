@@ -1,21 +1,30 @@
 <div class="sidenav-container">
   <div class="navigation-warper" [perfect-scrollbar]="config" fxLayout="column">
     <md-toolbar class="branding" color="primary">
-      <button md-button="default" class="logo-btn" mdTooltip="메인">
+      <button md-button="default" class="logo-btn" mdTooltip="메인" routerLink="/">
        <img src="assets/images/logo.png" alt="" class="app-logo">
         <img src="assets/images/logo-text.png" alt="" class="app-logo-text">
       </button>
     </md-toolbar>
 
-    <div class="app-user">
+    <div class="app-user" fxLayout="column">
       <div class="app-user-photo">
         <img src="assets/images/avatar.png" alt="">
       </div>
-      <span class="app-user-name">
-        <md-icon class="text-muted">people</md-icon>
-        <!--{{ iamground.name || transaction}}-->
-        David Kwon
-    </span>
+      <md-list dense>
+        <md-list-item class="user-info">
+          <md-icon class="text-muted">people</md-icon>
+          <span>David Kwon</span>
+        </md-list-item>
+        <md-list-item class="user-info">
+          <md-icon class="text-muted">phone</md-icon>
+          <a href="sms:01053356158">01053356158</a>
+        </md-list-item>
+        <md-list-item class="user-info">
+          <md-icon class="text-muted">email</md-icon>
+          <a href="mailto:tienne89@gmail.com">tienne89@gmail.com</a>
+        </md-list-item>
+      </md-list>
     </div>
 
     <div>

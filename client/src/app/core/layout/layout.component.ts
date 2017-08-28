@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { MdSidenav } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/filter';
+import {LocationService} from '../../shared/location/location.service';
 
 @Component({
   selector: 'app-layout',
@@ -15,17 +16,33 @@ export class LayoutComponent implements OnInit {
   // 퀵패널 노출여부
   quickpanelOpen = false;
   // 사이드 메뉴
-  @ViewChild(MdSidenav) private sideNave: MdSidenav;
+  @ViewChild(MdSidenav) private sideNav: MdSidenav;
   url;
 
-  constructor(private router: Router) {
-    console.log('layout constructor');
+  constructor(
+    private router: Router,
+    private location: LocationService
+  ) {
     this.themeName = 'iam-app-orange';
-    router.events.filter(event => event instanceof NavigationEnd).subscribe((routeChange: NavigationEnd) => {
-      this.url = routeChange.url;
-      if (this.isNavOver()) {
-        this.sideNave.close();
-      }
+    // 라우터 변경 완료 시
+    router.events
+      .filter(event => event instanceof NavigationEnd)
+      .subscribe((routeChange: NavigationEnd) => {
+        this.url = routeChange.url;
+        console.log(`route change ${routeChange}`);
+        if (this.isNavOver()) {
+          this.sideNav.close();
+        }
+      });
+
+    router.events
+      .filter(event => event instanceof NavigationStart)
+      .subscribe((routeChange: NavigationStart) => {
+        console.log(`route change start`);
+      });
+
+    this.location.currentPath.subscribe(path => {
+      console.log(`경로 변경 ${path}`);
     });
   }
 

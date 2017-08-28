@@ -46,7 +46,7 @@
 
 
     .app-user {
-      text-align: center;
+      text-align: left;
       width: 100%;
       padding: 1rem 0 .4rem;
 
@@ -62,17 +62,21 @@
         border-radius: 50%;
       }
 
-      .app-user-name {
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin-left: -2px;
+      .user-info {
+        margin-left: 0.6rem;
+        font-size: 1rem;
+        a:hover {
+          text-decoration: underline;
+        }
         md-icon {
           font-size: 1rem !important;
-          //line-height: 13px;
-          height: 13px;
-          width: 13px;
+          margin-right: 0.5rem;
+          line-height: 16px;
+          height: 16px;
+          width: 16px;
         }
       }
+
     }
   }
 }

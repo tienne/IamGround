@@ -53,7 +53,7 @@ export class ThemeComponent {
 
   installTheme(theme: ITheme) {
     this.currentTheme = this._getCurrentThemeFromHref(theme.href);
-    console.log(theme);
+
     if (theme.isDefault) {
       this.styleManager.removeStyle('theme');
     } else {

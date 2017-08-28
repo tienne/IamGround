@@ -9,6 +9,11 @@ import { I18nStorageService } from './i18n-storage/i18n-storage.service';
   imports: [
     CommonModule,
     TranslateModule
+    // TranslateModule.forRoot({
+    //   provide: TranslateLoader,
+    //   useFactory: (createTranslateLoader),
+    //   deps: [Http]
+    // }),
   ],
   declarations: [],
   providers: [
