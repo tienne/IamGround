@@ -16,7 +16,7 @@ export class LayoutComponent implements OnInit {
   // 퀵패널 노출여부
   quickpanelOpen = false;
   // 사이드 메뉴
-  @ViewChild(MdSidenav) private sideNav: MdSidenav;
+  @ViewChild('sideNav') private sideNav: MdSidenav;
   url;
 
   constructor(
@@ -29,21 +29,21 @@ export class LayoutComponent implements OnInit {
       .filter(event => event instanceof NavigationEnd)
       .subscribe((routeChange: NavigationEnd) => {
         this.url = routeChange.url;
-        console.log(`route change ${routeChange}`);
+        console.log(`route change ${routeChange} isNavOver: ${this.isNavOver()}`);
         if (this.isNavOver()) {
           this.sideNav.close();
         }
       });
 
-    router.events
-      .filter(event => event instanceof NavigationStart)
-      .subscribe((routeChange: NavigationStart) => {
-        console.log(`route change start`);
-      });
-
-    this.location.currentPath.subscribe(path => {
-      console.log(`경로 변경 ${path}`);
-    });
+    // router.events
+    //   .filter(event => event instanceof NavigationStart)
+    //   .subscribe((routeChange: NavigationStart) => {
+    //     console.log(`route change start`);
+    //   });
+    //
+    // this.location.currentPath.subscribe(path => {
+    //   console.log(`경로 변경 ${path}`);
+    // });
   }
 
   ngOnInit() {

@@ -4,13 +4,13 @@
     <md-progress-bar mode="indeterminate" color="accent"></md-progress-bar>
   </div>
 
-  <app-toolbar [quickpanel]="quickpanel" [sidenav]="sidenav"></app-toolbar>
+  <app-toolbar [quickpanel]="quickpanel" [sidenav]="sideNav"></app-toolbar>
 
   <md-sidenav class="quickpanel" [opened]="quickpanelOpen" align="end" mode="over" #quickpanel>
 
   </md-sidenav>
 
-  <md-sidenav class="sidenav" [opened]="!isNavOver()" align="start" [mode]="isNavOver() ? 'over' : 'side'" #sidenav>
+  <md-sidenav class="sidenav" [opened]="!isNavOver()" align="start" [mode]="isNavOver() ? 'over' : 'side'" #sideNav>
 
     <app-sidenav></app-sidenav>
 
