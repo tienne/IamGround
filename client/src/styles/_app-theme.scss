@@ -28,7 +28,7 @@
 
   .mat-bg-primary,
   .app-toolbar,
-  .sidenav.mat-sidenav .sidebar-list-item.open md-icon:not(.menu-caret),
+  .sidenav.mat-sidenav .sidenav-list-item.open md-icon:not(.menu-caret),
   .chats-wrap .conversations-hold .single-conversation.me .conversation-msg,
   .ngx-datatable .datatable-footer .datatable-pager .pager .pages.active a,
   .fileupload-drop-zone.dz-file-over,
@@ -39,15 +39,15 @@
     color: #ffffff !important;
   }
   .mat-color-primary,
-  .sidenav.mat-sidenav .sidebar-list-item.open > .mat-list-item-content > a > span,
-  .sidenav.mat-sidenav .sidebar-list-item.open .sub-menu .mat-list-item.selected a {
+  .sidenav.mat-sidenav .sidenav-list-item.open > .mat-list-item-content > a > span,
+  .sidenav.mat-sidenav .sidenav-list-item.open .sub-menu .mat-list-item.selected a {
     color: map-get($md-primary, 500) !important;
   }
-  .sidenav.mat-sidenav .sidebar-list-item.open > .mat-list-item-content > a > span,
-  .sidenav.mat-sidenav .sidebar-list-item.open .sub-menu .mat-list-item.selected a {
+  .sidenav.mat-sidenav .sidenav-list-item.open > .mat-list-item-content > a > span,
+  .sidenav.mat-sidenav .sidenav-list-item.open .sub-menu .mat-list-item.selected a {
     font-weight: 500;
   }
-  .sidenav.mat-sidenav .sidebar-list-item.open > .mat-list-item-content > .sub-menu {
+  .sidenav.mat-sidenav .sidenav-list-item.open > .mat-list-item-content > .sub-menu {
     border-left: 2px solid map-get($md-primary, 500);
   }
   .messages-wrap .inbox-hold {
@@ -58,7 +58,7 @@
   }
 
   .app-user .user-info,
-  .sidenav.mat-sidenav .sidebar-list-item md-icon:not(.menu-caret),
+  .sidenav.mat-sidenav .sidenav-list-item md-icon:not(.menu-caret),
   .ql-snow .ql-picker {
     color: if($isDark, white, rgba(0, 0, 0, .96)) !important;
   }
@@ -74,7 +74,7 @@
   .cal-month-view .cal-cell-row:hover,
   .chats-wrap .conversations-hold .single-conversation.sender .conversation-msg,
   .cal-day-view .cal-hour:nth-child(odd),
-  &.collapsed-menu .sidenav .sidebar-list-item.open .sub-menu,
+  &.collapsed-menu .sidenav .sidenav-list-item.open .sub-menu,
   .breadcrumb-bar {
     background: if($isDark, rgba(66, 66, 66, 0.92), rgba(255, 255, 255, .95)) !important;
   }

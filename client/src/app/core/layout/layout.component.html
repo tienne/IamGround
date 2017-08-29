@@ -1,7 +1,7 @@
-<md-sidenav-container [ngClass]="themeName">
+<md-sidenav-container>
 
-  <div *ngIf="isFetching" class="progress-bar-container">
-    <md-progress-bar mode="indeterminate" color="accent"></md-progress-bar>
+  <div *ngIf="isFetching$ | async" class="progress-bar-container">
+    <md-progress-bar mode="indeterminate" [color]="color"></md-progress-bar>
   </div>
 
   <app-toolbar [quickpanel]="quickpanel" [sidenav]="sideNav"></app-toolbar>

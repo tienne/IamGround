@@ -2,14 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PagesRoutingModule } from './pages-routing.module';
-import { IamComponent } from './iam/iam.component';
-import { TestComponent } from './test/test.component';
+import { IamgroundComponent } from './iamground/iamground.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   imports: [
     CommonModule,
     PagesRoutingModule
   ],
-  declarations: [ IamComponent, TestComponent ]
+  declarations: [
+    IamgroundComponent,
+    ProjectsComponent,
+    ContactComponent
+  ]
 })
 export class PagesModule { }

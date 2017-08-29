@@ -7,10 +7,11 @@
     "hmr": "ng serve --hmr -e=hmr",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "firebase:deploy": "yarn build && cd dist && cp ./index.html ./404.html && firebase deploy"
+    "firebase:deploy": "yarn run build:prod && cd dist && cp ./index.html ./404.html && firebase deploy"
   },
   "private": true,
   "dependencies": {

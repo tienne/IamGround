@@ -28,8 +28,8 @@
     </div>
 
     <div>
-      <md-nav-list fxLayout="column" class="sidenav-list sidenav-toplevel">
-        <!--<ms-sidenav-item ></ms-sidenav-item>-->
+      <md-nav-list fxLayout="column">
+        <app-sidenav-item *ngFor="let menu of menus" [item]="menu"></app-sidenav-item>
       </md-nav-list>
     </div>
   </div>
