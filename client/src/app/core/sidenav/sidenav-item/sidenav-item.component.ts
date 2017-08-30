@@ -12,10 +12,7 @@ export class SidenavItemComponent implements OnInit {
 
   menuTypes = SideItemTypes;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-    console.log(this.item);
-  }
-
+  ngOnInit() {}
 }

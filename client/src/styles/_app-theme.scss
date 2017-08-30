@@ -21,11 +21,13 @@
     color: #ffffff;
   }
 
+  //not-found-wrapper
   .not-found-wrapper {
     background: mat-color($background, background);
     color: mat-color($foreground, base);
   }
 
+  //primary 배경에 흰색 글씨 처리
   .mat-bg-primary,
   .app-toolbar,
   .sidenav.mat-sidenav .sidenav-list-item.open md-icon:not(.menu-caret),

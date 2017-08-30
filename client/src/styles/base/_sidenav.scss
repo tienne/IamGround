@@ -1,0 +1,60 @@
+// 사이드바 시작
+.sidenav {
+  //유저 정보 영역
+  .app-user .mat-list{
+    .user-info {
+      .mat-list-item-content {
+        height: 25px;
+      }
+    }
+  }
+
+  // 사이드바 메뉴 영역
+  .mat-nav-list {
+    //메뉴
+    .sidenav-list-item {
+
+      a {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 48px;
+        padding: 0 16px 0 0;
+        z-index: 99;
+      }
+
+      md-icon:not(.menu-caret) {
+        text-align: center;
+        margin-right: 8px;
+        height: 48px;
+        width: 48px;
+        line-height: 48px;
+      }
+
+      .mat-list-item-content {
+        font-size: .875rem !important;
+        display: block;
+        overflow: hidden;
+        height: auto;
+        padding: 0;
+        width: 100%;
+        -webkit-transition: max-height .3s cubic-bezier(.35, 0, .25, 1);
+        transition: max-height .3s cubic-bezier(.35, 0, .25, 1);
+      }
+    }
+    //oepn 메뉴
+    .sidenav-list-item.open {
+      .mat-list-item-content {
+        background: rgba(0, 0, 0, .03);
+      }
+    }
+  }
+}

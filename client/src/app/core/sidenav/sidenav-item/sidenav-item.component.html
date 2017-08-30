@@ -1,11 +1,11 @@
 <md-list-item sidenavItem class="sidenav-list-item" role="listitem" *ngIf="!item.disabled && item.type !== menuTypes.separator && item.type !== menuTypes.icon" [ngClass]="{'has-submenu': item.type === menuTypes.dropDown}" routerLinkActive="open">
-
+  <!-- 링크 메뉴 -->
   <a [routerLink]="['/', item.path]" *ngIf="item.type === menuTypes.link">
     <span class="menu-item-tooltip" [mdTooltip]="item.tooltip" mdTooltipPosition="right"></span>
     <md-icon>{{item.icon}}</md-icon>
     <span>{{item.name}}</span>
   </a>
-
+  <!-- 아코디언 처리용 -->
   <a *ngIf="item.type === menuTypes.dropDown">
     <span class="menu-item-tooltip" [mdTooltip]="item.tooltip" mdTooltipPosition="above"></span>
     <md-icon>{{item.icon}}</md-icon>
@@ -13,7 +13,7 @@
     <span fxFlex></span>
     <md-icon class="menu-caret">arrow_drop_down</md-icon>
   </a>
-
+  <!-- 외부 링크 메뉴 -->
   <a [href]="item.path" *ngIf="item.type === 'extLink'" target="_blank">
     <span class="menu-item-tooltip" [mdTooltip]="item.tooltip" mdTooltipPosition="right"></span>
     <md-icon>{{item.icon}}</md-icon>
@@ -28,7 +28,7 @@
 
 </md-list-item>
 
-<!-- separator -->
+<!-- 구분선 -->
 <div class="mt-1 mb-1" *ngIf="!item.disabled && item.type === menuTypes.separator">
   <md-divider *ngIf="index != 0"></md-divider>
   <span class="section-title text-muted" *ngIf="!!item.name">{{item.name}}</span>

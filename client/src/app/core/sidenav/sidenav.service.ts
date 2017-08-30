@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+// import 하고 export하는 이유는 https://github.com/angular/angular-cli/issues/2034#issuecomment-302666897 참고
 import { ISideItem, SideItemTypes} from './sidenav.model';
 export { ISideItem, ISideSub, SideItemTypes } from './sidenav.model';
 
@@ -9,7 +10,7 @@ export class SidenavService {
   menu: ISideItem[] = [
     {
       type: SideItemTypes.separator,
-      name: 'Introduce'
+      name: 'About Me'
     },
     {
       name: `I'm Ground`,
@@ -31,7 +32,7 @@ export class SidenavService {
       type: SideItemTypes.link,
       icon: 'contacts',
       tooltip: 'Hi! David'
-    }
+    },
   ];
   // 메뉴 subject
   menuItems = new BehaviorSubject<ISideItem[]>(this.menu);
