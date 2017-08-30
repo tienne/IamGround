@@ -1,6 +1,6 @@
-<md-list-item sidenavItem class="sidebar-list-item" role="listitem" *ngIf="!item.disabled && item.type !== menuTypes.separator && item.type !== menuTypes.icon" [ngClass]="{'has-submenu': item.type === menuTypes.dropDown}" routerLinkActive="open">
+<md-list-item sidenavItem class="sidenav-list-item" role="listitem" *ngIf="!item.disabled && item.type !== menuTypes.separator && item.type !== menuTypes.icon" [ngClass]="{'has-submenu': item.type === menuTypes.dropDown}" routerLinkActive="open">
 
-  <a [routerLink]="['/', item.state]" *ngIf="item.type === menuTypes.link">
+  <a [routerLink]="['/', item.path]" *ngIf="item.type === menuTypes.link">
     <span class="menu-item-tooltip" [mdTooltip]="item.tooltip" mdTooltipPosition="right"></span>
     <md-icon>{{item.icon}}</md-icon>
     <span>{{item.name}}</span>
@@ -14,7 +14,7 @@
     <md-icon class="menu-caret">arrow_drop_down</md-icon>
   </a>
 
-  <a [href]="item.state" *ngIf="item.type === 'extLink'" target="_blank">
+  <a [href]="item.path" *ngIf="item.type === 'extLink'" target="_blank">
     <span class="menu-item-tooltip" [mdTooltip]="item.tooltip" mdTooltipPosition="right"></span>
     <md-icon>{{item.icon}}</md-icon>
     <span>{{item.name}}</span>
@@ -22,8 +22,14 @@
 
   <md-nav-list class="sub-menu" role="list" *ngIf="item.type === menuTypes.dropDown">
     <md-list-item routerLinkActive="selected" *ngFor="let subItem of item.sub">
-      <a [routerLink]="['/', item.state, subItem.state]">{{subItem.name}}</a>
+      <a [routerLink]="['/', item.path, subitem.path]">{{subItem.name}}</a>
     </md-list-item>
   </md-nav-list>
 
 </md-list-item>
+
+<!-- separator -->
+<div class="mt-1 mb-1" *ngIf="!item.disabled && item.type === menuTypes.separator">
+  <md-divider *ngIf="index != 0"></md-divider>
+  <span class="section-title text-muted" *ngIf="!!item.name">{{item.name}}</span>
+</div>

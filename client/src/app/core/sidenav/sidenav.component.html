@@ -29,7 +29,7 @@
 
     <div>
       <md-nav-list fxLayout="column">
-        <app-sidenav-item *ngFor="let menu of menus" [item]="menu"></app-sidenav-item>
+        <app-sidenav-item *ngFor="let menu of menus; let i = index" [item]="menu" [index]="i"></app-sidenav-item>
       </md-nav-list>
     </div>
   </div>

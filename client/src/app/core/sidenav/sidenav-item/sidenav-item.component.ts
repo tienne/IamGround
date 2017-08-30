@@ -8,6 +8,8 @@ import {ISideItem, SideItemTypes} from '../sidenav.service';
 })
 export class SidenavItemComponent implements OnInit {
   @Input('item') item: ISideItem;
+  @Input('index') index: number;
+
   menuTypes = SideItemTypes;
 
   constructor() { }
