@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path: 'interests',
+    loadChildren: 'app/pages/interests/interests.module#InterestsModule'
   }
 ];
 

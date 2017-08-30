@@ -33,6 +33,34 @@ export class SidenavService {
       icon: 'contacts',
       tooltip: 'Hi! David'
     },
+    {
+      type: SideItemTypes.separator,
+      name: 'My Ground'
+    },
+    {
+      name: 'My Interests',
+      path: 'interests',
+      type: SideItemTypes.link,
+      icon: 'lightbulb_outline',
+      tooltip: 'My Interest Lists'
+    },
+    {
+      name: 'Utils',
+      path: 'utils',
+      type: SideItemTypes.dropDown,
+      icon: 'iso',
+      tooltip: 'My Utils',
+      sub: [
+        {
+          name: 'json view',
+          path: 'json'
+        },
+        {
+          name: 'test',
+          path: 'test'
+        }
+      ]
+    }
   ];
   // 메뉴 subject
   menuItems = new BehaviorSubject<ISideItem[]>(this.menu);

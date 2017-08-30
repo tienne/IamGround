@@ -22,7 +22,7 @@
 
   <md-nav-list class="sub-menu" role="list" *ngIf="item.type === menuTypes.dropDown">
     <md-list-item routerLinkActive="selected" *ngFor="let subItem of item.sub">
-      <a [routerLink]="['/', item.path, subitem.path]">{{subItem.name}}</a>
+      <a [routerLink]="['/', item.path, subItem.path]">{{subItem.name}}</a>
     </md-list-item>
   </md-nav-list>
 

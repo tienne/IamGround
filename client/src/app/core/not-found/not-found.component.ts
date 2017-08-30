@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
 export class NotFoundComponent implements OnInit {
   constructor(
     private router: Router,
-    private location: Location
+    public location: Location
   ) { }
 
   ngOnInit() {
