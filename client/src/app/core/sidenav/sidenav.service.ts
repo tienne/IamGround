@@ -13,8 +13,8 @@ export class SidenavService {
       name: 'About Me'
     },
     {
-      name: `I'm Ground`,
-      path: 'who',
+      name: `Profile`,
+      path: 'profile',
       type: SideItemTypes.link,
       icon: 'people',
       tooltip: 'who? why? what?'

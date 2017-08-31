@@ -30,7 +30,7 @@
   //primary 배경에 흰색 글씨 처리
   .mat-bg-primary,
   .app-toolbar,
-  .sidenav.mat-sidenav .sidenav-list-item.open md-icon:not(.menu-caret),
+  .sidenav.mat-sidenav .sidenav-list-item.active md-icon:not(.menu-caret),
   .chats-wrap .conversations-hold .single-conversation.me .conversation-msg,
   .ngx-datatable .datatable-footer .datatable-pager .pager .pages.active a,
   .fileupload-drop-zone.dz-file-over,
@@ -41,15 +41,15 @@
     color: #ffffff !important;
   }
   .mat-color-primary,
-  .sidenav.mat-sidenav .sidenav-list-item.open > .mat-list-item-content > a > span,
+  .sidenav.mat-sidenav .sidenav-list-item.active > .mat-list-item-content > a > span,
   .sidenav.mat-sidenav .sidenav-list-item.open .sub-menu .mat-list-item.selected a {
     color: map-get($md-primary, 500) !important;
   }
-  .sidenav.mat-sidenav .sidenav-list-item.open > .mat-list-item-content > a > span,
-  .sidenav.mat-sidenav .sidenav-list-item.open .sub-menu .mat-list-item.selected a {
+  .sidenav.mat-sidenav .sidenav-list-item.active > .mat-list-item-content > a > span,
+  .sidenav.mat-sidenav .sidenav-list-item.active .sub-menu .mat-list-item.selected a {
     font-weight: 500;
   }
-  .sidenav.mat-sidenav .sidenav-list-item.open > .mat-list-item-content > .sub-menu {
+  .sidenav.mat-sidenav .sidenav-list-item.active > .mat-list-item-content > .sub-menu {
     border-left: 2px solid map-get($md-primary, 500);
   }
   .messages-wrap .inbox-hold {

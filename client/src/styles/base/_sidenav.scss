@@ -13,6 +13,10 @@
   .mat-nav-list {
     //메뉴
     .sidenav-list-item {
+      max-height: 48px;
+      overflow: hidden;
+      -webkit-transition: all .3s cubic-bezier(.35,0,.25,1);
+      transition: all .3s cubic-bezier(.35,0,.25,1);
 
       a {
         position: relative;
@@ -31,12 +35,40 @@
         z-index: 99;
       }
 
-      md-icon:not(.menu-caret) {
-        text-align: center;
-        margin-right: 8px;
-        height: 48px;
-        width: 48px;
-        line-height: 48px;
+      md-icon {
+        &:not(.menu-caret) {
+          text-align: center;
+          margin-right: 8px;
+          height: 48px;
+          width: 48px;
+          line-height: 48px;
+        }
+        &.menu-caret {
+          float: right;
+          -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+          -webkit-transition: all .3s cubic-bezier(.35,0,.25,1);
+          transition: all .3s cubic-bezier(.35,0,.25,1);
+        }
+      }
+
+      .sub-menu {
+        padding: 0;
+        -webkit-transition: max-height .3s cubic-bezier(.35,0,.25,1);
+        transition: max-height .3s cubic-bezier(.35,0,.25,1);
+
+        .mat-list-item {
+          -webkit-transition: height .3s cubic-bezier(.35,0,.25,1);
+          transition: height .3s cubic-bezier(.35,0,.25,1);
+
+          &.selected {
+            background: rgba(0, 0, 0, .05);
+          }
+        }
+
+        a {
+          padding-left: 54px;
+        }
       }
 
       .mat-list-item-content {
@@ -52,8 +84,19 @@
     }
     //oepn 메뉴
     .sidenav-list-item.open {
+      max-height: 1000px;
+      overflow: visible;
       .mat-list-item-content {
         background: rgba(0, 0, 0, .03);
+
+        .sub-menu {
+          max-height: 1000px;
+        }
+      }
+
+      md-icon.menu-caret {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
       }
     }
   }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { IamgroundComponent } from './iamground/iamground.component';
+import { ProfileComponent } from './profile/profile.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 
@@ -11,8 +11,8 @@ const routes: Routes = [
     redirectTo: 'who'
   },
   {
-    path: 'who',
-    component: IamgroundComponent
+    path: 'profile',
+    component: ProfileComponent
   },
   {
     path: 'projects',
@@ -25,6 +25,10 @@ const routes: Routes = [
   {
     path: 'interests',
     loadChildren: 'app/pages/interests/interests.module#InterestsModule'
+  },
+  {
+    path: 'utils',
+    loadChildren: 'app/pages/utils/utils.module#UtilsModule'
   }
 ];
 

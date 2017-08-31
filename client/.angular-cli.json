@@ -23,11 +23,7 @@
       "serviceWorker": true,
       "styles": [
         "../node_modules/normalize.css/normalize.css",
-        "styles.scss",
-        {"input": "assets/styles/app-bluegrey.css", "lazy": true},
-        {"input": "assets/styles/app-cyan.css", "lazy": true},
-        {"input": "assets/styles/app-dark-orange.css", "lazy": true},
-        {"input": "assets/styles/app-dark-pink.css", "lazy": true}
+        "styles.scss"
       ],
       "scripts": [
         "../node_modules/hammerjs/hammer.js"

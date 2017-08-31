@@ -1,10 +1,13 @@
+// core
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+// app
 import { PagesRoutingModule } from './pages-routing.module';
-import { IamgroundComponent } from './iamground/iamground.component';
+// pages component
+import { ProfileComponent } from './profile/profile.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
+
 
 @NgModule({
   imports: [
@@ -12,9 +15,9 @@ import { ContactComponent } from './contact/contact.component';
     PagesRoutingModule
   ],
   declarations: [
-    IamgroundComponent,
+    ProfileComponent,
     ProjectsComponent,
-    ContactComponent
+    ContactComponent,
   ]
 })
 export class PagesModule { }
