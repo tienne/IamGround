@@ -29,7 +29,7 @@ import 'element-closest/element-closest';
 // import 'core-js/es6/math';
 // import 'core-js/es6/string';
 // import 'core-js/es6/date';
-// import 'core-js/es6/array';
+import 'core-js/es6/array';
 // import 'core-js/es6/regexp';
 // import 'core-js/es6/map';
 // import 'core-js/es6/weak-map';

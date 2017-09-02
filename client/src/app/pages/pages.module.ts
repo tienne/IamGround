@@ -12,7 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 @NgModule({
   imports: [
     CommonModule,
-    PagesRoutingModule
+    // PagesRoutingModule
   ],
   declarations: [
     ProfileComponent,

@@ -3,6 +3,7 @@ import { Router, NavigationEnd, NavigationStart, RoutesRecognized } from '@angul
 import { MdSidenav } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/do';
 import {LocationService} from '../../shared/location/location.service';
 
 @Component({
@@ -29,7 +30,7 @@ export class LayoutComponent implements OnInit {
     this.router.events.filter(event => event instanceof NavigationEnd)
       .subscribe((routeChange: NavigationEnd) => {
         this.url = routeChange.url;
-        console.log(`route change ${routeChange} isNavOver: ${this.isNavOver()}`);
+
         if (this.isNavOver()) {
           this.sideNav.close();
         }

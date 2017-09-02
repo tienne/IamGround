@@ -1,6 +1,6 @@
-import {Component, Input, OnInit, ViewChild } from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {RouterLinkActive} from '@angular/router';
-import {ISideItem, SideItemTypes} from '../sidenav.service';
+import {ISideItem, SideItemTypes, SidenavService} from '../sidenav.service';
 
 @Component({
   selector: 'app-sidenav-item',
@@ -8,8 +8,6 @@ import {ISideItem, SideItemTypes} from '../sidenav.service';
   styleUrls: ['./sidenav-item.component.scss']
 })
 export class SidenavItemComponent implements OnInit {
-  open: boolean;
-  hasSub: boolean;
 
   @Input('item')
   item: ISideItem;
@@ -22,11 +20,11 @@ export class SidenavItemComponent implements OnInit {
 
   menuTypes = SideItemTypes;
 
-  constructor() {}
+  constructor(
+    private sidenavService: SidenavService
+  ) {}
 
   ngOnInit() {
-    this.hasSub = this.item.sub && this.item.type === SideItemTypes.dropDown;
-    this.isOpen();
   }
 
   /**
@@ -37,25 +35,27 @@ export class SidenavItemComponent implements OnInit {
     return !this.item.disabled && this.item.type !== SideItemTypes.separator && this.item.type !== SideItemTypes.icon;
   }
 
-  isOpen(): boolean {
-    if (this.route) {
-      this.open = this.open || this.route.isActive;
-      return this.open;
-    }
-    return false;
+  /**
+   * 해당 메뉴가 열려있는지 여부(dropDown 일경우만)
+   * @returns {boolean}
+   */
+  isOpen() {
+    return this.sidenavService.isOpen(this.item);
   }
 
-  toggle($event) {
-    if (this.hasSub) {
-      const parentEl = $event.target.closest('md-list-item');
-      console.log(parentEl);
+  /**
+   * 해당 메뉴에 하위 메뉴가 포함되어있는지 여부(dropDown 일경우만)
+   * @returns {boolean | ISideSub[]}
+   */
+  hasSubs() {
+    return this.sidenavService.hasSubs(this.item);
+  }
 
-      // 하위 메뉴 클릭시는 오픈여부 변경안함
-      if (!parentEl.classList.contains('has-submenu')) {
-        console.log(parentEl.classList);
-        return ;
-      }
-      this.open = !this.isOpen();
-    }
+  /**
+   * 하위메뉴 오픈 토글
+   * @param $event
+   */
+  dropDownToggle($event) {
+    this.sidenavService.toggleOpen(this.item);
   }
 }

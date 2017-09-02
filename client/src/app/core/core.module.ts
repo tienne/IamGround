@@ -44,9 +44,7 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SidenavItemComponent,
     SidenavItemDirective
   ],
-  exports: [
-    LayoutComponent
-  ],
+  exports: [],
   providers: [
     LocationService,
     SidenavService

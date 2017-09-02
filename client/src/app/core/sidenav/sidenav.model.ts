@@ -19,7 +19,7 @@ export interface ISideItem {
   icon?: string;                    // 메뉴 아이콘
   tooltip?: string;                 // 메뉴 툴팁
   disabled?: boolean;               // 메뉴 숨김여부
-  sub?: ISideSub[];                 // 하위 메뉴(Array<ISideSub>)
+  subs?: ISideSub[];                // 하위 메뉴(Array<ISideSub>)
 }
 
 /**

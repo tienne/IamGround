@@ -1,4 +1,4 @@
-<md-list-item sidenavItem class="sidenav-list-item" role="listitem" *ngIf="isShow()" (click)="toggle($event)" [ngClass]="{'has-submenu': hasSub, 'open': isOpen()}" routerLinkActive="active">
+<md-list-item sidenavItem class="sidenav-list-item" role="listitem" *ngIf="isShow()" [ngClass]="{'has-submenu': hasSubs(), 'open': isOpen()}" routerLinkActive="active">
   <!-- 링크 메뉴 -->
   <a [routerLink]="['/', item.path]" *ngIf="item.type === menuTypes.link">
     <span class="menu-item-tooltip" [mdTooltip]="item.tooltip" mdTooltipPosition="right"></span>
@@ -6,7 +6,7 @@
     <span>{{item.name}}</span>
   </a>
   <!-- 하위메뉴 포함용 메뉴 -->
-  <a *ngIf="item.type === menuTypes.dropDown">
+  <a *ngIf="item.type === menuTypes.dropDown" (click)="dropDownToggle($event)">
     <span class="menu-item-tooltip" [mdTooltip]="item.tooltip" mdTooltipPosition="above"></span>
     <md-icon>{{item.icon}}</md-icon>
     <span>{{item.name}}</span>
@@ -21,7 +21,7 @@
   </a>
   <!-- 하위 메뉴 -->
   <md-nav-list class="sub-menu" role="list" *ngIf="item.type === menuTypes.dropDown">
-    <md-list-item routerLinkActive="selected" *ngFor="let subItem of item.sub">
+    <md-list-item routerLinkActive="selected" *ngFor="let subItem of item.subs">
       <a [routerLink]="['/', item.path, subItem.path]">{{subItem.name}}</a>
     </md-list-item>
   </md-nav-list>
