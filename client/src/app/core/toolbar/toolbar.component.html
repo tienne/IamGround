@@ -6,17 +6,24 @@
 
   <span class="flex-spacer"></span>
 
-  <!-- 언어 변경 -->
-  <md-select placeholder="" name="currentLang" [(ngModel)]="currentLang" (change)="setLang()">
-    <md-option *ngFor="let lang of availableLangs" [value]="lang.code" ngDefaultControl>{{ lang.name }}</md-option>
-  </md-select>
+  <div fxLayoutGap="10px">
+    <!-- 언어 변경 -->
+    <app-i18n></app-i18n>
 
-  <!-- 테마 변경 -->
-  <app-theme></app-theme>
+    <!-- 테마 변경 -->
+    <app-theme></app-theme>
+  </div>
 
-  <a md-button href="https://github.com/tienne" aria-label="GitHub Profile" mdTooltip="Github 프로필">
-    <img class="docs-github-logo" src="../../../assets/images/github-circle-white-transparent.svg" alt="GitHub">
-    GitHub
-  </a>
+  <div fxFlex="0" fxHide.xs fxFlexOffset="15px"></div>
+  <!--<md-select placeholder="" name="currentLang" [(ngModel)]="currentLang" (change)="setLang()">-->
+    <!--<md-option *ngFor="let lang of availableLangs" [value]="lang.code" ngDefaultControl>{{ lang.name }}</md-option>-->
+  <!--</md-select>-->
+
+
+
+  <!--<a md-button href="https://github.com/tienne" aria-label="GitHub Profile" mdTooltip="Github 프로필">-->
+    <!--<img class="docs-github-logo" src="../../../assets/images/github-circle-white-transparent.svg" alt="GitHub">-->
+    <!--GitHub-->
+  <!--</a>-->
 
 </md-toolbar>

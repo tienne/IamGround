@@ -13,7 +13,7 @@ import {LocationService} from '../../shared/location/location.service';
 })
 export class LayoutComponent implements OnInit {
   isFetching$: Observable<boolean>;
-  color = 'accent';
+  color = 'primary';
   // 퀵패널 노출여부
   quickpanelOpen = false;
   // 사이드 메뉴

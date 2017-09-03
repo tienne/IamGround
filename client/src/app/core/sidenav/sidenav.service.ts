@@ -5,6 +5,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import {ISideItem, ISideSub, SideItemTypes} from './sidenav.model';
 export { ISideItem, ISideSub, SideItemTypes } from './sidenav.model';
 
+
 @Injectable()
 export class SidenavService {
   // 열려있는 메뉴
@@ -12,11 +13,8 @@ export class SidenavService {
   private _openMenu: ISideItem[] = [];
   openMenu$: Observable<ISideItem[]> = this._openSubject.asObservable();
 
-  constructor() {
-    this.openMenu$.subscribe((items: ISideItem[]) => {
-      console.log(items);
-    });
-  }
+  constructor() {}
+
   menu: ISideItem[] = [
     {
       type: SideItemTypes.separator,
@@ -92,7 +90,7 @@ export class SidenavService {
 
   nextOpenByRoute(route: string) {
     const menu = this.findByRoute(route, this.menu),
-      currentlyOpen = menu ? [menu] : [];
+      currentlyOpen = menu ? [menu] : this._openMenu;
 
     this.nextOpen(currentlyOpen);
   }
