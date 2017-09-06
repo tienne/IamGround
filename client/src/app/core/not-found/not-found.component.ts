@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'not-found',
@@ -9,8 +8,7 @@ import { Location } from '@angular/common';
 })
 export class NotFoundComponent implements OnInit {
   constructor(
-    private router: Router,
-    public location: Location
+    private router: Router
   ) { }
 
   ngOnInit() {

@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
-import { ITheme } from './theme.model';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Observable} from 'rxjs/Observable';
 import {ReplaySubject} from 'rxjs/ReplaySubject';
+import {LocalStorageService} from '../local-storage/local-storage.service';
+import {StyleManagerService} from '../style-manager/style-manager.service';
+import { ITheme } from './theme.model';
 export { ITheme } from './theme.model';
 
 @Injectable()
 export class ThemeService {
+  STORAGE_KEY = 'app-theme';
+  STYLE_KEY = 'theme';
+  STYLE_PATH = 'assets/styles/app-';
+
   private currentTheme: ITheme;
   currentThemeSubject: ReplaySubject<ITheme> = new ReplaySubject();
   currentTheme$ = this.currentThemeSubject.asObservable();
@@ -43,6 +49,61 @@ export class ThemeService {
   themesSubject: BehaviorSubject<ITheme[]> = new BehaviorSubject(this._themes);
   themes$: Observable<ITheme[]> = this.themesSubject.asObservable();
 
-  constructor() { }
+  constructor(
+    private _storage: LocalStorageService,
+    private _styleManager: StyleManagerService
+  ) {
+    if (!this.currentTheme) {
+      const currentTheme = this.getStore();
+
+      if (currentTheme) {
+        this.installTheme(currentTheme);
+      }
+    }
+  }
+
+  /**
+   * 로컬스토리지에 저장된 테마를 가져온다.
+   * @returns {ITheme}
+   */
+  private getStore(): ITheme | null {
+    return this._storage.getObject(this.STORAGE_KEY);
+  }
+
+  /**
+   * 테마 href 경로 가져온다.
+   * @param {ITheme} theme
+   * @returns {string}
+   */
+  private getStylePath(theme: ITheme) {
+    return `${this.STYLE_PATH}${theme.href}`;
+  }
+
+  /**
+   * 현재 테마 변경 처리
+   * @param {ITheme} theme
+   */
+  currentNext(theme: ITheme) {
+    this.currentTheme = theme;
+    this.currentThemeSubject.next(theme);
+  }
+
+  /**
+   * 테마 변경
+   * @param {ITheme} theme
+   */
+  installTheme(theme: ITheme) {
+    this.currentNext(theme);
+
+    if (theme.isDefault) {
+      this._styleManager.removeStyle(this.STYLE_KEY);
+    } else {
+      this._styleManager.setStyle(this.STYLE_KEY, this.getStylePath(theme));
+    }
+
+    if (this.currentTheme) {
+      this._storage.store(this.STORAGE_KEY, this.currentTheme);
+    }
+  }
 
 }

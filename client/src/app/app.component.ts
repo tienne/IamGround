@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {I18nService} from './shared/i18n/i18n.service';
+import {ThemeService} from './shared/theme/theme.service';
 
 @Component({
   moduleId: module.id,
@@ -10,7 +11,8 @@ import {I18nService} from './shared/i18n/i18n.service';
 export class AppComponent implements OnInit {
   // 생성자
   constructor(
-    private _i18n: I18nService
+    private _i18n: I18nService,
+    private _theme: ThemeService
   ) {}
 
   ngOnInit () {}

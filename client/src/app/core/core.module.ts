@@ -16,12 +16,12 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SidenavItemComponent } from './sidenav/sidenav-item/sidenav-item.component';
 import { I18nComponent } from './i18n/i18n.component';
 // app module
-import { ThemeModule } from './theme/theme.module';
 import { LocationService } from '../shared/location/location.service';
 import { SidenavService } from './sidenav/sidenav.service';
 import { SidenavItemDirective } from './sidenav/sidenav-item.directive';
 import {I18nService} from '../shared/i18n/i18n.service';
 import {LocalStorageService} from '../shared/local-storage/local-storage.service';
+import {ThemeComponent} from './theme/theme.component';
 
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -35,7 +35,6 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MaterialComponentsModule,
     FlexLayoutModule,
     RouterModule,
-    ThemeModule,
     TranslateModule,
     PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG)
   ],
@@ -46,7 +45,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NotFoundComponent,
     SidenavItemComponent,
     I18nComponent,
-    SidenavItemDirective
+    SidenavItemDirective,
+    ThemeComponent
   ],
   exports: [],
   providers: [
