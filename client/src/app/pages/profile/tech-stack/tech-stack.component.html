@@ -1,14 +1,13 @@
 <md-expansion-panel hideToggle="true" #panel>
   <md-expansion-panel-header>
-    <md-panel-title>{{tech.name}}</md-panel-title>
-    <div class="text-muted" *ngIf="!isOpen"><small>자세히보기..</small></div>
+    <md-panel-title>
+      <img class="skill-logo" [src]="getTechLogo()">
+      <span>{{tech.title}}</span>
+    </md-panel-title>
+    <div class="text-muted" *ngIf="!isOpen"><small>{{'profile.more' | translate}}</small></div>
   </md-expansion-panel-header>
-  <p>
-    A calm form of relativity is the thought.
-    The kingdom is full of peace.
-    Chaos is not the one totality of the moon.
-  </p>
+  <p [innerHtml]="tech.description"></p>
 </md-expansion-panel>
-<div class="stack-score" *ngIf="!isOpen">
-  <md-progress-bar mode="deteminate" value="20"></md-progress-bar>
+<div class="stack-score" *ngIf="!isOpen" [ngClass]="tech.name">
+  <md-progress-bar mode="deteminate" [value]="tech.proficiency"></md-progress-bar>
 </div>

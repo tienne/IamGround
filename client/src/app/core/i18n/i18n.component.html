@@ -1,8 +1,7 @@
-<button [mdMenuTriggerFor]="i18Menu" md-icon-button mdTooltip="언어 변경">
+<button [mdMenuTriggerFor]="i18Menu" md-icon-button [mdTooltip]="'common.toolbar.i18-tooltip' | translate">
   <md-icon>language</md-icon>
 </button>
 
-<md-menu #i18Menu="mdMenu">
-  <button md-menu-item>한국어</button>
-  <button md-menu-item>English</button>
+<md-menu class="i18n-menu" #i18Menu="mdMenu">
+  <button *ngFor="let lang of langs" md-menu-item [ngClass]="{'active': lang.code == currentLang}" (click)="changeLang(lang.code)">{{lang.title}}</button>
 </md-menu>

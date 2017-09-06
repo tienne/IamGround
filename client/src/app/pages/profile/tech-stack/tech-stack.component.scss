@@ -1,0 +1,44 @@
+@import "../../../../styles/mixin";
+
+:host {
+  .skill-logo {
+    width: 22px;
+    max-height: 22px;
+    margin-right: 5px;
+    margin-bottom: 1px;
+  }
+
+  .stack-score {
+    md-progress-bar {
+      height: 10px;
+    }
+  }
+
+  /deep/ .php {
+    @include tech-color(#656e8d, #c6d1ff);
+  }
+
+  /deep/ .csharp {
+    @include tech-color(#ce9ecf, #ffeaff);
+  }
+
+  /deep/ .nodejs {
+    @include tech-color(#83ad52, #f0ffc5);
+  }
+
+  /deep/ .javascript {
+    @include tech-color(#f0db4f, #fff5bf);
+  }
+
+  /deep/ .css {
+    @include tech-color(#6c8bf3, #dae1ff);
+  }
+
+  /deep/ .angular {
+    @include tech-color(#dd0330, #ffc6d0);
+  }
+
+  /deep/ .laravel {
+    @include tech-color(#d15a47, #ffd7d2);
+  }
+}

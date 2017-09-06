@@ -2,17 +2,18 @@
   <!-- 헤더 -->
   <md-card-header>
     <img md-card-avatar class="profile-avatar" src="assets/images/profile.jpg">
-    <md-card-title><b>David Kwon</b></md-card-title>
-    <md-card-subtitle>Web Developer in Seoul</md-card-subtitle>
+    <md-card-title><b>{{'common.app.author' | translate}}</b></md-card-title>
+    <md-card-subtitle>{{'profile.subTitle' | translate}}</md-card-subtitle>
 
   </md-card-header>
 
   <md-card-content>
     <md-divider></md-divider>
-    <p>The moonlight of your conclusions will travel cheerfully when you view that acceptance is the karma.</p>
+    <p [innerHtml]="'profile.description' | translate"></p>
+    <app-spinner *ngIf="techLoading"></app-spinner>
     <!-- 기술 요약 -->
     <div class="tech-stack-container">
-      <app-tech-stack *ngFor="let tech of techs" [tech]="tech"></app-tech-stack>
+      <app-tech-stack *ngFor="let tech of techs$ | async" [tech]="tech"></app-tech-stack>
     </div>
   </md-card-content>
 </md-card>

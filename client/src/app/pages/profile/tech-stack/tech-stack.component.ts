@@ -1,5 +1,6 @@
 import {Component, OnInit, Input, ViewChild} from '@angular/core';
 import {MdExpansionPanel} from '@angular/material';
+import {ISkill} from '../../../shared/skill/skill.service';
 
 @Component({
   selector: 'app-tech-stack',
@@ -7,7 +8,7 @@ import {MdExpansionPanel} from '@angular/material';
   styleUrls: ['./tech-stack.component.scss']
 })
 export class TechStackComponent implements OnInit {
-  @Input('tech') tech;
+  @Input('tech') tech: ISkill;
   @ViewChild('panel') panel: MdExpansionPanel;
   isOpen: boolean;
   constructor() { }
@@ -22,4 +23,7 @@ export class TechStackComponent implements OnInit {
     });
   }
 
+  getTechLogo() {
+    return `assets/images/tech-logos/${this.tech.name}.png`;
+  }
 }

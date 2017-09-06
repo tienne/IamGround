@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { TranslateModule } from '@ngx-translate/core';
 // app
 import { MaterialComponentsModule } from '../common/material-components.module';
 import { LayoutComponent } from './layout/layout.component';
@@ -19,6 +20,8 @@ import { ThemeModule } from './theme/theme.module';
 import { LocationService } from '../shared/location/location.service';
 import { SidenavService } from './sidenav/sidenav.service';
 import { SidenavItemDirective } from './sidenav/sidenav-item.directive';
+import {I18nService} from '../shared/i18n/i18n.service';
+import {LocalStorageService} from '../shared/local-storage/local-storage.service';
 
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -33,6 +36,7 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FlexLayoutModule,
     RouterModule,
     ThemeModule,
+    TranslateModule,
     PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG)
   ],
   declarations: [
@@ -47,7 +51,9 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   exports: [],
   providers: [
     LocationService,
-    SidenavService
+    SidenavService,
+    I18nService,
+    LocalStorageService
   ]
 })
 export class CoreModule { }

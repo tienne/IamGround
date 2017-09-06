@@ -1,4 +1,4 @@
-<button [mdMenuTriggerFor]="themeMenu" md-icon-button mdTooltip="테마 변경">
+<button [mdMenuTriggerFor]="themeMenu" md-icon-button [mdTooltip]="'common.toolbar.theme-tooltip' | translate">
   <md-icon>format_color_fill</md-icon>
 </button>
 <md-menu class="theme-menu" #themeMenu="mdMenu">

@@ -23,7 +23,12 @@ export class LayoutComponent implements OnInit {
   constructor(
     private router: Router,
     private location: LocationService
-  ) {}
+  ) {
+    this.isFetching$ = this.router.events
+      .map(event =>
+        (event instanceof NavigationStart || event instanceof RoutesRecognized)
+      );
+  }
 
   ngOnInit() {
     // 라우터 변경 완료 시
@@ -35,11 +40,6 @@ export class LayoutComponent implements OnInit {
           this.sideNav.close();
         }
       });
-
-    this.isFetching$ = this.router.events
-      .map(event =>
-        (event instanceof NavigationStart || event instanceof RoutesRecognized)
-      );
   }
 
   isNavOver() {

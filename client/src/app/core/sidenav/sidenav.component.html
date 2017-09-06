@@ -1,7 +1,7 @@
 <div class="sidenav-container">
   <div class="navigation-warper" fxLayout="column">
     <md-toolbar class="branding" color="primary">
-      <button md-button="default" class="logo-btn" mdTooltip="메인" routerLink="/">
+      <button md-button="default" class="logo-btn" [mdTooltip]="'common.toolbar.logo-tooltip' | translate" routerLink="/">
        <img src="assets/images/logo.png" alt="" class="app-logo">
         <img src="assets/images/logo-text.png" alt="" class="app-logo-text">
       </button>
@@ -14,7 +14,7 @@
       <md-list dense>
         <md-list-item class="user-info">
           <md-icon class="text-muted">people</md-icon>
-          <span>David Kwon</span>
+          <span>{{'common.app.author' | translate}}</span>
         </md-list-item>
         <md-list-item class="user-info">
           <md-icon class="text-muted">phone</md-icon>
