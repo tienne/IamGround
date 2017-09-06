@@ -40,9 +40,11 @@
     background: map-get($md-primary, 500) !important;
     color: #ffffff !important;
   }
+
   .mat-color-primary,
   .sidenav.mat-sidenav .sidenav-list-item.active > .mat-list-item-content > a > span,
-  .sidenav.mat-sidenav .sidenav-list-item.open .sub-menu .mat-list-item.selected a {
+  .sidenav.mat-sidenav .sidenav-list-item.open .sub-menu .mat-list-item.selected a,
+  .mat-menu-panel .mat-menu-content .mat-menu-item.active{
     color: map-get($md-primary, 500) !important;
   }
   .sidenav.mat-sidenav .sidenav-list-item.active > .mat-list-item-content > a > span,
