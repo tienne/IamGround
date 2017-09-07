@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   // 생성자
   constructor(
     private _i18n: I18nService,
-    private _theme: ThemeService
+    private _theme: ThemeService,
   ) {}
 
   ngOnInit () {}

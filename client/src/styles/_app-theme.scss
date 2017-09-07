@@ -1,8 +1,11 @@
 @import '../../node_modules/@angular/material/theming';
+@import 'constants';
 
 @mixin app-theme($md-primary, $md-accent, $isDark) {
 
-  @include mat-core();
+  $custom-typography: mat-typography-config($font-family: $main-font);
+  @include mat-core($custom-typography);
+
   $primary-dark: darken( map-get($md-primary, 500), 8% );
   $app-primary: mat-palette($md-primary);
   $app-accent:  mat-palette($md-accent);

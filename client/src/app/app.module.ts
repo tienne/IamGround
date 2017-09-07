@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule} from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 import { environment } from '../environments/environment';
 // app
 import { AppComponent } from './app.component';
@@ -16,7 +17,6 @@ import {StyleManagerService} from './shared/style-manager/style-manager.service'
 import {ThemeService} from './shared/theme/theme.service';
 import {I18nModule} from './shared/i18n/i18n.module';
 
-
 @NgModule({
   declarations: [
     AppComponent
@@ -26,6 +26,7 @@ import {I18nModule} from './shared/i18n/i18n.module';
     CoreModule,
     PagesModule,
     BrowserAnimationsModule,
+    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,

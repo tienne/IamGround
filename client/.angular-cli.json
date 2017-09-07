@@ -8,7 +8,7 @@
       "root": "src",
       "outDir": "dist",
       "assets": [
-        "assets",
+        { "glob": "**/!(*.scss|*.gitignore)", "input": "./assets/", "output": "./assets/" },
         "favicon.ico",
         "meta",
         "manifest.json"
