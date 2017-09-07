@@ -6,7 +6,7 @@
     <md-grid-tile *ngFor="let theme of themes">
       <div md-menu-item (click)="installTheme(theme)">
         <div class="theme-swatch">
-          <md-icon class="theme-chosen-icon" *ngIf="currentTheme.href === theme.href">check_circle</md-icon>
+          <md-icon class="theme-chosen-icon" *ngIf="currentTheme?.href === theme?.href">check_circle</md-icon>
           <div class="theme-primary" [style.background]="theme.primary"></div>
         </div>
       </div>
