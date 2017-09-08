@@ -4,6 +4,9 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 // import 하고 export하는 이유는 https://github.com/angular/angular-cli/issues/2034#issuecomment-302666897 참고
 import {ISideItem, ISideSub, SideItemTypes} from './sidenav.model';
 export { ISideItem, ISideSub, SideItemTypes } from './sidenav.model';
+import {WindowRef} from '../../shared/window-ref';
+import {environment} from '../../../environments/environment';
+
 
 
 @Injectable()
@@ -13,7 +16,12 @@ export class SidenavService {
   private _openMenu: ISideItem[] = [];
   openMenu$: Observable<ISideItem[]> = this._openSubject.asObservable();
 
-  constructor() {}
+  constructor(private _window: WindowRef) {
+    if (this._window.isWebApp() || !environment.production) {
+      this.menu = this.menu.concat(this.webAppMenu);
+      this.menuItems.next(this.menu);
+    }
+  }
 
   menu: ISideItem[] = [
     {
@@ -41,6 +49,9 @@ export class SidenavService {
       icon: 'contacts',
       tooltip: 'Hi! David'
     },
+  ];
+
+  webAppMenu: ISideItem[] = [
     {
       type: SideItemTypes.separator,
       name: 'My Ground'
@@ -70,6 +81,7 @@ export class SidenavService {
       ]
     }
   ];
+
   // 메뉴 subject
   menuItems = new BehaviorSubject<ISideItem[]>(this.menu);
   // 메뉴 스트림

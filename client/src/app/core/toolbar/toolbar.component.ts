@@ -26,7 +26,7 @@ export class ToolbarComponent implements OnInit {
   constructor(private _window: WindowRef) {}
 
   ngOnInit() {
-    this.isWebApp = this._window.nativeWindow.matchMedia('(display-mode: standalone)').matches;
+    this.isWebApp = this._window.isWebApp();
   }
   /**
    *  사이드 메뉴 토글 처리
