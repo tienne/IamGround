@@ -66,4 +66,4 @@ $cyan-md-accent: (
   )
 );
 
-@include app-theme($cyan-md-primary, $cyan-md-accent, false);
+@include app-theme($cyan-md-primary, $cyan-md-accent, true);

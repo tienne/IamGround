@@ -8,7 +8,11 @@ export class SkillService {
 
   techs$: FirebaseListObservable<ISkill[]>;
   constructor(private db: AngularFireDatabase) {
-    this.techs$ = db.list('techs');
+    this.techs$ = this.db.list('techs');
+  }
+
+  getAllSkill() {
+    return this.db.list('techs');
   }
 
 }

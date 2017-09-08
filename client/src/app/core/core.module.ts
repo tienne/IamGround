@@ -21,6 +21,7 @@ import { SidenavItemDirective } from './sidenav/sidenav-item.directive';
 import {LocalStorageService} from '../shared/local-storage/local-storage.service';
 import {ThemeComponent} from './theme/theme.component';
 import {I18nModule} from '../shared/i18n/i18n.module';
+import {WindowRef} from '../shared/window-ref';
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -50,7 +51,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   providers: [
     LocationService,
     SidenavService,
-    LocalStorageService
+    LocalStorageService,
+    WindowRef
   ]
 })
 export class CoreModule { }

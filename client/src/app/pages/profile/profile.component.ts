@@ -16,7 +16,9 @@ export class ProfileComponent implements OnInit, OnDestroy {
   techLoading = true;
   techSubscription: Subscription;
 
-  constructor(private skillService: SkillService) {
+  constructor(
+    private skillService: SkillService
+  ) {
     this.techs$ = this.skillService.techs$;
   }
 

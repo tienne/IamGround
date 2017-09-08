@@ -26,15 +26,15 @@ export class ThemeService {
       isDefault: true,
     },
     {
-      primary: '#f6b26b',
-      accent: '#607d8b',
-      href: 'dark-orange.css',
+      primary: '#00bcd4',
+      accent: '#ff5722',
+      href: 'dark-cyan.css',
       isDark: true
     },
     {
-      primary: '#00bcd4',
-      accent: '#ff5722',
-      href: 'cyan.css',
+      primary: '#f6b26b',
+      accent: '#607d8b',
+      href: 'orange.css',
       isDark: false
     },
     {

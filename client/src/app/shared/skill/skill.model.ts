@@ -7,4 +7,5 @@ export interface ISkill {
   parent?: string;
   proficiency?: number;
   description?: ITranslate;
+  year?: number;
 }

@@ -11,19 +11,14 @@
     <app-i18n></app-i18n>
 
     <!-- 테마 변경 -->
-    <app-theme></app-theme>
+    <app-theme *ngIf="!isWebApp"></app-theme>
+
+    <!-- 기타메뉴(로그인 같은 용도로 사용)-->
+    <button md-icon-button>
+      <md-icon>more_vert</md-icon>
+    </button>
   </div>
 
   <div fxFlex="0" fxHide.xs fxFlexOffset="15px"></div>
-  <!--<md-select placeholder="" name="currentLang" [(ngModel)]="currentLang" (change)="setLang()">-->
-    <!--<md-option *ngFor="let lang of availableLangs" [value]="lang.code" ngDefaultControl>{{ lang.name }}</md-option>-->
-  <!--</md-select>-->
-
-
-
-  <!--<a md-button href="https://github.com/tienne" aria-label="GitHub Profile" mdTooltip="Github 프로필">-->
-    <!--<img class="docs-github-logo" src="../../../assets/images/github-circle-white-transparent.svg" alt="GitHub">-->
-    <!--GitHub-->
-  <!--</a>-->
 
 </md-toolbar>

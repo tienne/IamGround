@@ -13,7 +13,9 @@
     <app-spinner *ngIf="techLoading"></app-spinner>
     <!-- 기술 요약 -->
     <div class="tech-stack-container">
-      <app-tech-stack *ngFor="let tech of techs$ | async" [tech]="tech"></app-tech-stack>
+      <md-accordion>
+        <app-tech-stack *ngFor="let tech of techs$ | async" [tech]="tech"></app-tech-stack>
+      </md-accordion>
     </div>
   </md-card-content>
 </md-card>

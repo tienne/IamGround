@@ -12,4 +12,7 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
   }
 
+  getSocialLogo(social: string) {
+    return `assets/images/contact-logos/${social}.png`;
+  }
 }
