@@ -8,4 +8,5 @@ export interface ISkill {
   proficiency?: number;
   description?: ITranslate;
   year?: number;
+  experience?: string;
 }
