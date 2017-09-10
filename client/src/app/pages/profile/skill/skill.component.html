@@ -2,11 +2,11 @@
   <md-expansion-panel-header>
     <md-panel-title>
       <img class="skill-logo" [src]="getTechLogo()">
-      <span>{{tech.title}}</span>
+      <span>{{skill.title}}</span>
     </md-panel-title>
   </md-expansion-panel-header>
 
-  <p [innerHtml]="tech.description | i18n"></p>
+  <p [innerHtml]="skill.description | i18n"></p>
 
   <md-list dense>
     <div fxLayout="row" fxLayoutWrap="wrap">
@@ -14,7 +14,8 @@
         <md-list-item>
           <md-icon mdListIcon>assessment</md-icon>
           <p md-line class="text-muted">{{'profile.proficiency' | translate}}</p>
-          <p md-line>{{tech.proficiency}} %</p>
+          <p md-line>{{skill.proficiency}} %</p>
+          <p mdLine></p>
         </md-list-item>
         <md-divider></md-divider>
       </div>
@@ -22,15 +23,29 @@
         <md-list-item>
           <md-icon mdListIcon>date_range</md-icon>
           <p mdLine class="text-muted">{{'profile.career' | translate}}</p>
-          <p mdLine>{{tech.year}} {{'profile.year' | translate}}</p>
+          <p mdLine>{{skill.year}} {{'profile.year' | translate}}</p>
+          <p mdLine></p>
         </md-list-item>
         <md-divider></md-divider>
       </div>
-      <div fxFlex="100">
+      <div fxFlex="100" fxFlex.gt-sm="50">
         <md-list-item>
           <md-icon mdListIcon>class</md-icon>
           <p mdLine class="text-muted">{{'profile.experience' | translate}}</p>
-          <p mdLine class="text-wrap">{{tech.experience}}</p>
+          <p mdLine class="text-wrap">{{skill.experience}}</p>
+          <p mdLine></p>
+        </md-list-item>
+        <md-divider></md-divider>
+      </div>
+      <div fxFlex="100" fxFlex.gt-sm="50">
+        <md-list-item>
+          <md-icon mdListIcon>work</md-icon>
+          <p mdLine class="text-muted">{{'profile.projects' | translate}}</p>
+          <div mdLine fxLayoutGap="7px">
+            <img class="project-logo" *ngFor="let project of projects$ | async"
+                 [src]="getProjectLogo(project)" [mdTooltip]="project.title">
+          </div>
+          <p mdLine></p>
         </md-list-item>
         <md-divider></md-divider>
       </div>
@@ -38,6 +53,6 @@
   </md-list>
 
 </md-expansion-panel>
-<div class="stack-score" *ngIf="!isOpen" [ngClass]="tech.name">
-  <md-progress-bar mode="deteminate" [value]="tech.proficiency"></md-progress-bar>
+<div class="stack-score" *ngIf="!isOpen" [ngClass]="skill.name">
+  <md-progress-bar mode="deteminate" [value]="skill.proficiency"></md-progress-bar>
 </div>

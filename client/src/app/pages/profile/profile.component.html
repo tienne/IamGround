@@ -9,13 +9,15 @@
 
   <md-card-content>
     <md-divider></md-divider>
-    <p [innerHtml]="'profile.description' | translate"></p>
-    <app-spinner *ngIf="techLoading"></app-spinner>
+    <div [innerHtml]="'profile.description' | translate"></div>
+    <div>
+      <h4>{{'profile.skills' | translate}}</h4>
+    </div>
+
+    <app-spinner *ngIf="skillLoading"></app-spinner>
     <!-- 기술 요약 -->
     <div class="tech-stack-container">
-      <md-accordion>
-        <app-tech-stack *ngFor="let tech of techs$ | async" [tech]="tech"></app-tech-stack>
-      </md-accordion>
+      <app-skill *ngFor="let skill of skills$ | async" [skill]="skill"></app-skill>
     </div>
   </md-card-content>
 </md-card>

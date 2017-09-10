@@ -11,27 +11,26 @@ import {Subscription} from 'rxjs/Subscription';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit, OnDestroy {
-  @ViewChild('techWrapper') techWrapper: MdAccordion;
-  techs$: Observable<ISkill[]>;
-  techLoading = true;
-  techSubscription: Subscription;
+  skills$: Observable<ISkill[]>;
+  skillLoading = true;
+  skillSubscription: Subscription;
 
   constructor(
     private skillService: SkillService
   ) {
-    this.techs$ = this.skillService.techs$;
+    this.skills$ = this.skillService.getAllSkill();
   }
 
   ngOnInit() {
-    this.techSubscription = this.techs$.subscribe((techs: ISkill[]) => {
-      if (this.techLoading) {
-        this.techLoading = false;
+    this.skillSubscription = this.skills$.subscribe((skills: ISkill[]) => {
+      if (this.skillLoading) {
+        this.skillLoading = false;
       }
     });
   }
 
   ngOnDestroy() {
-    this.techSubscription.unsubscribe();
+    this.skillSubscription.unsubscribe();
   }
 
 }

@@ -9,7 +9,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { ProfileComponent } from './profile/profile.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
-import { TechStackComponent } from './profile/tech-stack/tech-stack.component';
+import { SkillComponent } from './profile/skill/skill.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {UiModule} from '../ui/ui.module';
 import {I18nModule} from '../shared/i18n/i18n.module';
@@ -27,7 +27,7 @@ import {I18nModule} from '../shared/i18n/i18n.module';
     ProfileComponent,
     ProjectsComponent,
     ContactComponent,
-    TechStackComponent,
+    SkillComponent,
   ]
 })
 export class PagesModule { }

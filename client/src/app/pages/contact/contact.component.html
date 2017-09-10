@@ -14,9 +14,21 @@
   </md-card-content>
   <md-card-footer>
     <div class="footer-icons" fxLayout="row" fxLayoutAlign="space-around center">
-      <button md-icon-button mdTooltip="Github"><img [src]="getSocialLogo('github')" alt="Github"></button>
-      <button md-icon-button mdTooltip="Facebook"><img [src]="getSocialLogo('facebook')" alt="Facebook"></button>
-      <button md-icon-button mdTooltip="Blog"><img [src]="getSocialLogo('tistory')" alt="Blog"></button>
+      <button md-icon-button mdTooltip="Github">
+        <a href="https://github.com/tienne" target="_blank">
+          <img [src]="getSocialLogo('github')" alt="Github">
+        </a>
+      </button>
+      <button md-icon-button mdTooltip="Facebook">
+        <a href="https://www.facebook.com/profile.php?id=100014637010536" target="_blank">
+          <img [src]="getSocialLogo('facebook')" alt="Facebook">
+        </a>
+      </button>
+      <button md-icon-button mdTooltip="Blog">
+        <a href="http://web-front-end.tistory.com/" target="_blank">
+          <img [src]="getSocialLogo('tistory')" alt="Blog">
+        </a>
+      </button>
     </div>
   </md-card-footer>
 </md-card>

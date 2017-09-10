@@ -35,7 +35,7 @@ export class I18nService {
     private _storage: LocalStorageService
   ) {
     if (!this.currentLangCode) {
-      const currentLang: LanguageCode = this.getStore() || 'ko';
+      const currentLang: LanguageCode = this.getStore() || 'en';
       this.currentLangCode = currentLang;
       this.currentSubject.next(this.currentLangCode);
       this._translate.setDefaultLang(this.currentLangCode);

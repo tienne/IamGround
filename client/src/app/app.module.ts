@@ -16,6 +16,7 @@ import {SkillService} from './shared/skill/skill.service';
 import {StyleManagerService} from './shared/style-manager/style-manager.service';
 import {ThemeService} from './shared/theme/theme.service';
 import {I18nModule} from './shared/i18n/i18n.module';
+import {ProjectService} from './shared/project/project.service';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {I18nModule} from './shared/i18n/i18n.module';
   ],
   providers: [
     SkillService,
+    ProjectService,
     ThemeService,
     StyleManagerService
   ],

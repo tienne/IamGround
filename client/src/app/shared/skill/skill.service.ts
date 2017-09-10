@@ -6,13 +6,23 @@ export { ISkill } from './skill.model';
 @Injectable()
 export class SkillService {
 
-  techs$: FirebaseListObservable<ISkill[]>;
+  // techs$: FirebaseListObservable<ISkill[]>;
   constructor(private db: AngularFireDatabase) {
-    this.techs$ = this.db.list('techs');
+    // this.techs$ = this.db.list('techs');
   }
 
-  getAllSkill() {
-    return this.db.list('techs');
+  getAllSkill(): FirebaseListObservable<ISkill[]> {
+    return this.db.list('skills', {
+      query: { orderByChild: 'order'}
+    });
   }
 
+  /**
+   * 스킬의 로고 경로를 가져옵니다.
+   * @param {ISkill} skill
+   * @returns {string}
+   */
+  getSkillLogo(skill: ISkill) {
+    return `assets/images/tech-logos/${skill.name}.png`;
+  }
 }
