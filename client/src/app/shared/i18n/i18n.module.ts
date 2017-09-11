@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {I18nPipe} from './i18n.pipe';
 import {I18nService} from './i18n.service';
-import {AngularFireDatabase} from 'angularfire2/database';
 import {FirebaseTransLoader} from './firebase-trans-loader';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {AngularFireOfflineDatabase} from 'angularfire2-offline';
 
-export function FbTransLoaderFactory(db: AngularFireDatabase) {
+export function FbTransLoaderFactory(db: AngularFireOfflineDatabase) {
   return new FirebaseTransLoader(db);
 }
 
@@ -14,7 +14,7 @@ export function FbTransLoaderFactory(db: AngularFireDatabase) {
   imports: [
     CommonModule,
     TranslateModule.forRoot({
-      loader: { provide: TranslateLoader, useFactory: FbTransLoaderFactory, deps: [AngularFireDatabase] }
+      loader: { provide: TranslateLoader, useFactory: FbTransLoaderFactory, deps: [AngularFireOfflineDatabase] }
     })
   ],
   declarations: [

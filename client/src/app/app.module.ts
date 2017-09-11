@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule} from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireOfflineModule } from 'angularfire2-offline';
 import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 import { environment } from '../environments/environment';
 // app
@@ -30,6 +31,7 @@ import {ProjectService} from './shared/project/project.service';
     Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    AngularFireOfflineModule,
     AngularFireAuthModule,
     AppRoutingModule,
     I18nModule,

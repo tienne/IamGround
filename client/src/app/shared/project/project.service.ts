@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {AngularFireDatabase} from 'angularfire2/database';
+import {AngularFireOfflineDatabase} from 'angularfire2-offline';
 import {ISkill} from '../skill/skill.model';
 import 'rxjs/add/operator/map';
 import {IProject} from './project.model';
@@ -9,7 +9,7 @@ export {IProject} from './project.model';
 export class ProjectService {
 
   constructor(
-    private db: AngularFireDatabase
+    private db: AngularFireOfflineDatabase
   ) { }
 
 
