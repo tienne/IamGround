@@ -1,17 +1,47 @@
 <md-card>
   <md-card-header>
     <md-card-title>
-      <h4>Contact</h4>
+      <h4>{{'contact.title' | translate}}</h4>
     </md-card-title>
-    <md-card-subtitle>If you want contact me, use anything that you want.</md-card-subtitle>
+    <md-card-subtitle>{{'contact.subTitle' | translate}}</md-card-subtitle>
   </md-card-header>
   <md-card-content>
     <md-divider></md-divider>
-    <p>
-      Totality is the only joy, the only guarantee of affirmation.Who can follow the control and emptiness of a master if he has the brilliant fear of the individual?Samadhi doesn’t qabalistic develop any guru — but the teacher is what wrestles.When one forgets manifestation and core, one is able to feel milk.Confucius says: in the pyramid all explosion of the milks desire bliss.Chaos of truth will solitary know one therapist.One must remember the visitor in order to visualize the monkey of occult dogma.
-    </p>
-    <md-divider></md-divider>
+    <div class="list-wrapper" fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="start stretch">
+      <div fxFlex="100" fxFlex.gt-xs="35" fxLayout="column" fxFlexAlign="start">
+        <h6><b>{{'contact.contact' | translate}}</b></h6>
+        <md-list dense>
+          <md-list-item>
+            <md-icon mdListIcon>contact_mail</md-icon>
+            <p mdLine><a href="mailto:tienne89@gmail.com">tienne89@gmail.com</a></p>
+          </md-list-item>
+          <md-list-item>
+            <md-icon mdListIcon>contact_phone</md-icon>
+            <p mdLine><a href="sms:01053356158">010-5335-6158</a></p>
+          </md-list-item>
+        </md-list>
+      </div>
+      <div fxFlex="100" fxFlex.gt-xs="65" fxLayout="column" fxFlexAlign="start">
+        <h6><b>{{'contact.welcome' | translate}}</b></h6>
+        <md-list dense>
+          <md-list-item>
+            <md-icon mdListIcon>group</md-icon>
+            <p mdLine class="text-wrap">{{'contact.welcome1' | translate}}</p>
+          </md-list-item>
+          <md-list-item>
+            <md-icon mdListIcon>group</md-icon>
+            <p mdLine class="text-wrap">{{'contact.welcome2' | translate}}</p>
+          </md-list-item>
+          <md-list-item>
+            <md-icon mdListIcon>group</md-icon>
+            <p mdLine class="text-wrap">{{'contact.welcome3' | translate}}</p>
+          </md-list-item>
+        </md-list>
+      </div>
+    </div>
+    <md-divider class="mt-1"></md-divider>
   </md-card-content>
+
   <md-card-footer>
     <div class="footer-icons" fxLayout="row" fxLayoutAlign="space-around center">
       <button md-icon-button mdTooltip="Github">

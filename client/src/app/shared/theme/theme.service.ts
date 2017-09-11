@@ -32,9 +32,9 @@ export class ThemeService {
       isDark: true
     },
     {
-      primary: '#f6b26b',
+      primary: '#009688',
       accent: '#607d8b',
-      href: 'orange.css',
+      href: 'teal.css',
       isDark: false
     },
     {

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { WindowRef } from '../../shared/window-ref';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-toolbar',
@@ -11,17 +12,7 @@ export class ToolbarComponent implements OnInit {
   @Input('quickpanel') quickpanel: any;
   @Input('sidenav') sidenav: any;
   isWebApp: boolean;
-  currentLang = 'ko';
-  availableLangs = [
-    {
-      name: '한국어',
-      code: 'ko'
-    },
-    {
-      name: 'English',
-      code: 'en',
-    }
-  ];
+  isProduction = environment.production;
 
   constructor(private _window: WindowRef) {}
 

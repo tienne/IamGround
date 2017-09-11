@@ -12,6 +12,11 @@ export class ProjectService {
     private db: AngularFireDatabase
   ) { }
 
+
+  findAllProject() {
+    return this.db.list('projects');
+  }
+
   findProjectsBySkill (skill: ISkill) {
     return this.db.list('projects')
       .map((projects: IProject[]) => {

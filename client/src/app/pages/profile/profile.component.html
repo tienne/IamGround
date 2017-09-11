@@ -1,4 +1,6 @@
-<md-card>
+<app-spinner *ngIf="skillLoading"></app-spinner>
+
+<md-card *ngIf="!skillLoading">
   <!-- 헤더 -->
   <md-card-header>
     <img md-card-avatar class="profile-avatar" src="assets/images/profile.jpg">
@@ -10,11 +12,15 @@
   <md-card-content>
     <md-divider></md-divider>
     <div [innerHtml]="'profile.description' | translate"></div>
-    <div>
-      <h4>{{'profile.skills' | translate}}</h4>
-    </div>
 
-    <app-spinner *ngIf="skillLoading"></app-spinner>
+    <md-list>
+      <md-list-item>
+        <md-icon mdListIcon>description</md-icon>
+        <h4 mdLine>{{'profile.skills' | translate}}</h4>
+      </md-list-item>
+    </md-list>
+    <md-divider class="mb-1"></md-divider>
+
     <!-- 기술 요약 -->
     <div class="tech-stack-container">
       <app-skill *ngFor="let skill of skills$ | async" [skill]="skill"></app-skill>

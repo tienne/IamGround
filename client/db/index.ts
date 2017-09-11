@@ -15,7 +15,7 @@ const appConfig = {
 
 fb.initializeApp(appConfig);
 
-const databases: string[] = ['skills', 'projects', 'translations'];
+const databases: string[] = ['skills', 'projects', 'translations', 'tags'];
 const refs = [];
 
 for (const db of databases) {
