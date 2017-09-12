@@ -18,6 +18,7 @@ import {StyleManagerService} from './shared/style-manager/style-manager.service'
 import {ThemeService} from './shared/theme/theme.service';
 import {I18nModule} from './shared/i18n/i18n.module';
 import {ProjectService} from './shared/project/project.service';
+import {TagsService} from './shared/tags/tags.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {ProjectService} from './shared/project/project.service';
     SkillService,
     ProjectService,
     ThemeService,
+    TagsService,
     StyleManagerService
   ],
   bootstrap: [AppComponent]

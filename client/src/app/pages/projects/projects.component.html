@@ -7,45 +7,34 @@
   <md-card-content>
     <md-divider></md-divider>
 
-    <div>
-      <md-select [multiple]="true" placeholder="filter">
-        <md-option>1</md-option>
-        <md-option>2</md-option>
-        <md-option>3</md-option>
-        <md-option>4</md-option>
+    <div class="filter-wrapper" fxLayoutAlign="end" #filter>
+      <md-select [multiple]="true" [placeholder]="'project.filter' | translate" fxFlex="100">
+        <!--<md-select-trigger></md-select-trigger>-->
+        <md-option *ngFor="let tag of tags$ | async" [value]="tag">{{tag.title}}</md-option>
       </md-select>
     </div>
-    <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
-      <div fxFlex="100" fxFlex.gt-sm="45" fxFlex.gt-md="28">
-        <md-card >
-          <md-card-header>aaa</md-card-header>
-          <md-card-content>bbb</md-card-content>
-        </md-card>
-      </div>
-      <div fxFlex="100" fxFlex.gt-sm="45" fxFlex.gt-md="28">
-        <md-card >
-          <md-card-header>aaa</md-card-header>
-          <md-card-content>bbb</md-card-content>
-        </md-card>
-      </div>
-      <div fxFlex="100" fxFlex.gt-sm="45" fxFlex.gt-md="28">
-        <md-card >
-          <md-card-header>aaa</md-card-header>
-          <md-card-content>bbb</md-card-content>
-        </md-card>
-      </div>
-      <div fxFlex="100" fxFlex.gt-sm="45" fxFlex.gt-md="28">
-        <md-card >
-          <md-card-header>aaa</md-card-header>
-          <md-card-content>bbb</md-card-content>
-        </md-card>
-      </div>
-      <div fxFlex="100" fxFlex.gt-sm="45" fxFlex.gt-md="28">
-        <md-card >
-          <md-card-header>aaa</md-card-header>
-          <md-card-content>bbb</md-card-content>
-        </md-card>
-      </div>
+
+    <div class="projects-wrapper" fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
+
+      <md-card *ngFor="let project of projects$ | async" fxFlex="100" fxFlex.gt-xs="48" fxFlex.gt-md="30">
+        <a [routerLink]="['.', project.name]">
+          <md-card-header>
+            <img class="project-logo" [src]="projectService.getProjectLogo(project)" mdCardAvatar>
+            <md-card-title>{{project.title}}</md-card-title>
+            <md-card-subtitle>{{project.subTitle | i18n}}</md-card-subtitle>
+          </md-card-header>
+          <div class="card-image-wrapper" mdCardImage>
+            <img [src]="projectService.getProjectImage(project)" (error)="defaultImage($event)">
+          </div>
+        </a>
+        <md-card-footer>
+          <div class="skill-logos">
+            <a *ngFor="let tag of project.tags" md-icon-button>
+              <img src="assets/images/tech-logos/{{tag}}.png" [mdTooltip]="tag">
+            </a>
+          </div>
+        </md-card-footer>
+      </md-card>
     </div>
 
 

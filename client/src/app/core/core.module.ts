@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { Angulartics2Module } from 'angulartics2';
 // app
 import { MaterialComponentsModule } from '../common/material-components.module';
 import { LayoutComponent } from './layout/layout.component';
@@ -35,7 +36,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FlexLayoutModule,
     RouterModule,
     I18nModule,
-    PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG)
+    PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG),
+    Angulartics2Module
   ],
   declarations: [
     ToolbarComponent,

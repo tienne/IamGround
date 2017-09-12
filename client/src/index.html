@@ -31,6 +31,16 @@
     }
     #outdated-info #btnUpdateBrowser:hover{color: #f25648; background-color:#ffffff;}
   </style>
+  <!-- ga -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-106067288-1', 'auto');
+
+  </script>
 </head>
 <body>
   <!--Flexbox 미지원 브라우저는 오래된 브라우저 처리-->
@@ -53,15 +63,6 @@
         ga('send', 'outDateBrowser');
       }
     })();
-  </script>
-  <!-- ga -->
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-106067288-1', 'auto');
   </script>
   <!--스크립트가 없을때의 처리-->
   <noscript>

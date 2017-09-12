@@ -14,7 +14,9 @@ export class ProjectService {
 
 
   findAllProject() {
-    return this.db.list('projects');
+    return this.db.list('projects', {
+      query: { orderByChild: 'order' }
+    });
   }
 
   findProjectsBySkill (skill: ISkill) {
@@ -32,6 +34,15 @@ export class ProjectService {
    */
   getProjectLogo (project: IProject) {
     return `assets/images/projects/${project.name}.png`;
+  }
+
+  /**
+   * 프로젝트 상세 화면 이미지 경로를 가져옵니다.
+   * @param {IProject} project
+   * @returns {string}
+   */
+  getProjectImage (project: IProject) {
+    return `assets/images/projects/${project.name}/${project.name}_1.png`;
   }
 
 }

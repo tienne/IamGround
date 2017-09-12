@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
+import {ProjectDetailComponent} from './projects/project-detail/project-detail.component';
 
 export const PageRoutes: Routes = [
   {
@@ -16,6 +17,10 @@ export const PageRoutes: Routes = [
   {
     path: 'projects',
     component: ProjectsComponent
+  },
+  {
+    path: 'projects/:project',
+    component: ProjectDetailComponent
   },
   {
     path: 'contact',

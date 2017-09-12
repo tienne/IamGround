@@ -1,3 +1,56 @@
 :host {
+  .filter-wrapper {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-right: 15px;
+  }
 
+  .projects-wrapper {
+    md-card {
+      margin-bottom: 20px;
+
+      >a {
+        .project-logo {
+          width:40px;
+          height:40px;
+          border-radius: 0% !important;
+        }
+
+        .card-image-wrapper {
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            max-height: 260px;
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+          }
+        }
+
+        &:hover {
+          .card-image-wrapper>img {
+            opacity: 0.6;
+            -webkit-transform: scale(1.15) rotate(2deg);
+            transform: scale(1.15) rotate(2deg);
+          }
+        }
+      }
+
+      md-card-footer {
+        div.skill-logos {
+          margin-bottom: 10px;
+          margin-left: 10px;
+          a {
+            margin-left: 5px;
+            img {
+              width: 28px;
+              height: 28px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
