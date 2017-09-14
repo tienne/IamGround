@@ -3,7 +3,10 @@ import {AngularFireOfflineDatabase} from 'angularfire2-offline';
 import {ISkill} from '../skill/skill.model';
 import 'rxjs/add/operator/map';
 import {IProject} from './project.model';
+import {ITag} from '../tags/tags.service';
+import {Observable} from 'rxjs/Observable';
 export {IProject} from './project.model';
+
 
 @Injectable()
 export class ProjectService {
@@ -13,7 +16,7 @@ export class ProjectService {
   ) { }
 
 
-  findAllProject() {
+  findAllProject(): Observable<IProject[]> {
     return this.db.list('projects', {
       query: { orderByChild: 'order' }
     });

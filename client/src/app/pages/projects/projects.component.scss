@@ -8,8 +8,8 @@
   .projects-wrapper {
     md-card {
       margin-bottom: 20px;
-
       >a {
+        cursor: pointer;
         .project-logo {
           width:40px;
           height:40px;
@@ -18,10 +18,11 @@
 
         .card-image-wrapper {
           overflow: hidden;
-
+          margin-top: 0px;
+          margin-bottom: 0px;
           img {
             width: 100%;
-            max-height: 260px;
+            height: 240px;
             -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
             transition: opacity 0.35s, transform 0.35s;
             -webkit-transform: scale(1);

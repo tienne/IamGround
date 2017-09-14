@@ -1,23 +1,22 @@
 <md-card>
   <md-card-header>
-    <img md-card-avatar class="profile-avatar" src="assets/images/project.png">
-    <md-card-title>Projects</md-card-title>
-    <md-card-subtitle>My Projects</md-card-subtitle>
+    <!--<img md-card-avatar class="profile-avatar" src="assets/images/project.png">-->
+    <!--<md-card-title>Projects</md-card-title>-->
+    <!--<md-card-subtitle>My Projects</md-card-subtitle>-->
   </md-card-header>
   <md-card-content>
-    <md-divider></md-divider>
+    <!--<md-divider></md-divider>-->
 
-    <div class="filter-wrapper" fxLayoutAlign="end" #filter>
-      <md-select [multiple]="true" [placeholder]="'project.filter' | translate" fxFlex="100">
-        <!--<md-select-trigger></md-select-trigger>-->
+    <div class="filter-wrapper" fxLayoutAlign="end">
+      <md-select [multiple]="true" [placeholder]="'project.filter' | translate" fxFlex="100" #filterSelect [(ngModel)]="filterSelected">
+        <!--<md-select-trigger [innerHtml]="filterLabel"></md-select-trigger>-->
         <md-option *ngFor="let tag of tags$ | async" [value]="tag">{{tag.title}}</md-option>
       </md-select>
     </div>
 
-    <div class="projects-wrapper" fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
-
-      <md-card *ngFor="let project of projects$ | async" fxFlex="100" fxFlex.gt-xs="48" fxFlex.gt-md="30">
-        <a [routerLink]="['.', project.name]">
+    <div class="projects-wrapper" fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="start center" fxLayoutGap.gt-xs="1%" fxLayoutGap.gt-md="3%">
+      <md-card *ngFor="let project of projects$ | async | tagFilter:filterSelected"  fxFlex="100" fxFlex.gt-xs="48" fxFlex.gt-md="30">
+        <a (click)="projectClick(project)">
           <md-card-header>
             <img class="project-logo" [src]="projectService.getProjectLogo(project)" mdCardAvatar>
             <md-card-title>{{project.title}}</md-card-title>

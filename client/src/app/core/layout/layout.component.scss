@@ -7,4 +7,9 @@ md-sidenav-container {
   height: 100%;
   padding: 0.5rem;
   overflow-x: hidden;
+
+  @media screen and (max-width: 599px) {
+    padding: 0;
+  }
 }
+

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from '../local-storage/local-storage.service';
-import { TranslateService } from '@ngx-translate/core';
+import {TranslateService} from '@ngx-translate/core';
 import { LanguageCode, Language } from './language';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
@@ -60,5 +60,14 @@ export class I18nService {
    */
   private getStore(): LanguageCode {
     return this._storage.getStore(this.STORAGE_KEY);
+  }
+
+  /**
+   * 경로에 해당하는 다국어 메세지를 가져옵니다.
+   * @param {string} path
+   * @returns {string}
+   */
+  getMessage(path: string) {
+    return this._translate.stream(path);
   }
 }
