@@ -7,6 +7,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireOfflineModule } from 'angularfire2-offline';
 import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 import { environment } from '../environments/environment';
+// import {ServiceWorkerModule} from '@angular/service-worker';
 // app
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +39,7 @@ import {AuthGuard} from './shared/auth/auth.guard';
     AngularFireAuthModule,
     AppRoutingModule,
     I18nModule,
+    // ServiceWorkerModule
   ],
   providers: [
     SkillService,
