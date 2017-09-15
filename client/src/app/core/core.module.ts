@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
-import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { Angulartics2Module } from 'angulartics2';
 // app
@@ -24,10 +22,6 @@ import {ThemeComponent} from './theme/theme.component';
 import {I18nModule} from '../shared/i18n/i18n.module';
 import {WindowRef} from '../shared/window-ref';
 
-const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: true
-};
-
 @NgModule({
   imports: [
     FormsModule,
@@ -36,7 +30,6 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FlexLayoutModule,
     RouterModule,
     I18nModule,
-    PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG),
     Angulartics2Module
   ],
   declarations: [
