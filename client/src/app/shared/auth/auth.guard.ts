@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate {
       return true;
     }
 
-    this.snackBar.open('로그인 후 이용 가능합니다.', '', { duration: 2000});
+    this.snackBar.open(this.auth.authDenyMsg, '', { duration: 2000});
     this.router.navigateByUrl('/auth/login');
     return true;
   }

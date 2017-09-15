@@ -3,13 +3,14 @@ import { Router } from '@angular/router';
 import { AngularFireOfflineDatabase } from 'angularfire2-offline';
 import { AngularFireAuth } from 'angularfire2/auth';
 import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/of';
 import {MdSnackBar} from '@angular/material';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import {I18nService} from '../i18n/i18n.service';
 
 @Injectable()
 export class AuthService {
+  authDenyMsg;
+  logoutMsg;
 
   authState: any = null;
   fetching$: BehaviorSubject<boolean> = new BehaviorSubject(false);
@@ -17,11 +18,22 @@ export class AuthService {
     private afAuth: AngularFireAuth,
     private db: AngularFireOfflineDatabase,
     private router: Router,
-    private snackBar: MdSnackBar
+    private snackBar: MdSnackBar,
+    private i18n: I18nService
   ) {
     this.afAuth.authState.subscribe((auth) => {
       this.authState = auth;
     });
+
+    this.i18n.getMessage('auth.logoutMsg')
+      .subscribe((msg) => {
+        this.logoutMsg = msg;
+      });
+
+    this.i18n.getMessage('auth.authDeny')
+      .subscribe((msg) => {
+        this.authDenyMsg = msg;
+      });
   }
 
   // Returns true if user is logged in
@@ -51,13 +63,13 @@ export class AuthService {
     return login$.do((user) => {
       this.authState = user;
       this.updateUserData();
-    }).catch((error) => Observable.of(error));
+    });
   }
 
   logout(): void {
     this.afAuth.auth.signOut();
     this.router.navigate(['/']);
-    this.snackBar.open('로그아웃 되었습니다.', '', {duration: 2000});
+    this.snackBar.open(this.logoutMsg, '', {duration: 2000});
   }
 
   private updateUserData(): void {

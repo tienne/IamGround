@@ -8,6 +8,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
 import { AuthComponent } from './auth.component';
+import { I18nModule } from '../shared/i18n/i18n.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AuthComponent } from './auth.component';
     AuthRoutingModule,
     MaterialComponentsModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    I18nModule
   ],
   declarations: [LoginComponent, AuthComponent]
 })

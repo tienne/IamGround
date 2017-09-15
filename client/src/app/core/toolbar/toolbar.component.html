@@ -19,10 +19,10 @@
     </button>
     <md-menu #etcMenu="mdMenu">
       <div *ngIf="!auth.authenticated">
-        <button md-menu-item [routerLink]="['/auth/login']">{{'common.toolbar.login' | translate}}</button>
+        <button md-menu-item [routerLink]="['/auth/login']">{{'auth.loginButton' | translate}}</button>
       </div>
       <div *ngIf="auth.authenticated">
-        <button md-menu-item (click)="logout()">{{'common.toolbar.logout' | translate}}</button>
+        <button md-menu-item (click)="logout()">{{'auth.logoutButton' | translate}}</button>
       </div>
     </md-menu>
   </div>

@@ -3,6 +3,10 @@ import { MdSnackBar, MdButton } from '@angular/material';
 import { AuthService } from '../../shared/auth/auth.service';
 import { NgForm } from '@angular/forms';
 import {Router} from '@angular/router';
+import {I18nService} from '../../shared/i18n/i18n.service';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/of';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +23,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private mdSnackBar: MdSnackBar,
-    private router: Router
+    private router: Router,
+    private i18n: I18nService
   ) { }
 
   ngOnInit() {
@@ -30,12 +35,23 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.submitButton.disabled = true;
+    const loginMsg$ = this.i18n.getMessage('auth.loginMsg');
     this.auth.emailLogin(this.loginForm.value['email'], this.loginForm.value['password'])
-      .take(1)
+      .combineLatest(loginMsg$, (user, msg) => {
+        user.welcome = `${user.email} ${msg}`;
+        return user;
+      })
+      .catch((error) => Observable.of(error))
       .do(() => this.auth.fetching$.next(false))
+      .take(1)
       .subscribe((user) => {
-        this.mdSnackBar.open(`${user.email}님 환영합니다.`, '', { duration: 2000 });
-        this.router.navigateByUrl('/');
+        if (user.email) {
+          this.mdSnackBar.open(user.welcome, '', { duration: 2000 });
+          this.router.navigateByUrl('/');
+        } else {
+          this.submitButton.disabled = false;
+          this.mdSnackBar.open(user);
+        }
       });
   }
 
