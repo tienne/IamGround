@@ -1,5 +1,36 @@
-@import '../../../styles/app-theme';
-
+@import '../app-theme';
+$md-primary: (
+  50 : #fef0ef,
+  100 : #fddad7,
+  200 : #fcc1bc,
+  300 : #faa8a1,
+  400 : #f9968d,
+  500 : #f88379,
+  600 : #f77b71,
+  700 : #f67066,
+  800 : #f5665c,
+  900 : #f35349,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #ffe5e4,
+  A700 : #ffcdca,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #ffffff,
+  )
+);
 $dark-pink-md-primary: (
   50 : #fce4ec,
   100 : #f8bcd0,

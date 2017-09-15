@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
           this.router.navigateByUrl('/');
         } else {
           this.submitButton.disabled = false;
-          this.mdSnackBar.open(user);
+          this.mdSnackBar.open(user, '', { duration: 2000});
         }
       });
   }

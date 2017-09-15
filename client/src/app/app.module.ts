@@ -16,7 +16,7 @@ import {CoreModule} from './core/core.module';
 import {PagesModule} from './pages/pages.module';
 import {SkillService} from './shared/skill/skill.service';
 import {StyleManagerService} from './shared/style-manager/style-manager.service';
-import {ThemeService} from './shared/theme/theme.service';
+// import {ThemeService} from './shared/theme/theme.service';
 import {I18nModule} from './shared/i18n/i18n.module';
 import {ProjectService} from './shared/project/project.service';
 import {TagsService} from './shared/tags/tags.service';
@@ -44,7 +44,7 @@ import {AuthGuard} from './shared/auth/auth.guard';
   providers: [
     SkillService,
     ProjectService,
-    ThemeService,
+    // ThemeService,
     TagsService,
     StyleManagerService,
     AuthService,

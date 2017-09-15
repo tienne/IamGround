@@ -5,9 +5,9 @@
   "scripts": {
     "ng": "ng",
     "hmr": "ng serve --hmr -e=hmr",
-    "start": "gulp themeBuild && ng serve",
+    "start": "ng serve",
     "build": "ng build",
-    "build:prod": "gulp themeBuild && ng build --aot --prod",
+    "build:prod": "ng build --aot --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

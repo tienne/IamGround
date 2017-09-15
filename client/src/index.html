@@ -14,13 +14,13 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
   <link rel="manifest" href="/manifest.json">
   <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#e91e63">
-  <meta name="theme-color" content="#e91e63">
+  <meta name="theme-color" content="#FF4040">
   <style type="text/css">
     #outdated-info{
       display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       vertical-align: middle;
       text-align: center; text-transform: uppercase; z-index:1500;
-      background-color: #f25648; color: #ffffff;
+      background-color: #FF4040; color: #ffffff;
     }
     * html #outdated-info{position: absolute;}
     #outdated-info h6{font-size: 25px; line-height: 25px; margin: 30px 0 10px;}
@@ -29,7 +29,80 @@
       display: block; position: relative; padding: 10px 20px; margin: 30px auto 0; width: 230px; /*need for IE*/
       color: #ffffff; text-decoration: none; border: 2px solid #ffffff; cursor: pointer;
     }
-    #outdated-info #btnUpdateBrowser:hover{color: #f25648; background-color:#ffffff;}
+    #outdated-info #btnUpdateBrowser:hover{color: #FF4040; background-color:#ffffff;}
+    .app-loading {
+      background: #FF4040;
+      display:flex;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+    .app-loading-inner {
+      display: flex;
+      flex-direction: column;
+    }
+    .app-loading-inner img {
+      display: flex;
+    }
+    .spinner-wrap {
+      display: flex;
+      /*justify-content: center;*/
+    }
+
+    .spinner {
+      width: 100%;
+      display: flex;
+      width: 50px;
+      height: 40px;
+      text-align: center;
+      font-size: 10px;
+    }
+
+    .spinner > div {
+      margin: 1px;
+      background-color: rgb(216, 216, 216);
+      height: 100%;
+      width: 6px;
+      display: inline-block;
+
+      -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+      animation: sk-stretchdelay 1.2s infinite ease-in-out;
+    }
+
+    .spinner .rect2 {
+      -webkit-animation-delay: -1.1s;
+      animation-delay: -1.1s;
+    }
+
+    .spinner .rect3 {
+      -webkit-animation-delay: -1.0s;
+      animation-delay: -1.0s;
+    }
+
+    .spinner .rect4 {
+      -webkit-animation-delay: -0.9s;
+      animation-delay: -0.9s;
+    }
+
+    .spinner .rect5 {
+      -webkit-animation-delay: -0.8s;
+      animation-delay: -0.8s;
+    }
+
+    @-webkit-keyframes sk-stretchdelay {
+      0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
+      20% { -webkit-transform: scaleY(1.0) }
+    }
+
+    @keyframes sk-stretchdelay {
+      0%, 40%, 100% {
+        transform: scaleY(0.4);
+        -webkit-transform: scaleY(0.4);
+      }  20% {
+           transform: scaleY(1.0);
+           -webkit-transform: scaleY(1.0);
+         }
+    }
   </style>
   <!-- ga -->
   <script>
@@ -45,10 +118,26 @@
 <body>
   <!--Flexbox 미지원 브라우저는 오래된 브라우저 처리-->
   <div id="outdated-info">
-    <h6>브라우저가 오래되었습니다!</h6>
-    <p>이 웹 페이지가 현재 브라우저에서는 정상적으로 보이지 않을 수 있습니다. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/ko">지금 브라우저를 업그레이드하세요! </a></p>
+    <h6>이 페이지는 모바일 혹은 최신브라우저에서만 작동합니다.</h6>
+    <p>윈도우에서는 크롬 브라우저를 이용하거나 IE11까지 업데이트 해주시기 바랍니다.<a id="btnUpdateBrowser" href="http://outdatedbrowser.com/ko">브라우저를 업그레이드</a></p>
   </div>
-  <app-root></app-root>
+  <app-root>
+    <div class="app-loading">
+      <div class="app-loading-inner">
+        <!--<img src="assets/images/logo.png" width="32px">-->
+        <!--<img src="assets/images/logo-text.png" width="192px">-->
+        <div class="spinner-wrap">
+          <div class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </app-root>
   <!--flexbox check -->
   <script type="text/javascript">
     (function() {
