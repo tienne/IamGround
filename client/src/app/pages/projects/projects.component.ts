@@ -9,7 +9,7 @@ import 'rxjs/add/operator/takeWhile';
 import {MdSnackBar} from '@angular/material';
 import {environment} from '../../../environments/environment';
 import {I18nService} from '../../shared/i18n/i18n.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-projects',
@@ -35,9 +35,10 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     public tagsService: TagsService,
     private _snackBar: MdSnackBar,
     private _i18n: I18nService,
+    private _route: ActivatedRoute,
     private _router: Router
-  ) {
-  }
+  ) {}
+
 
   ngOnInit() {
     this.projects$ = this.projectService.findAllProject();

@@ -24,8 +24,9 @@
     color: #ffffff;
   }
 
-  //not-found-wrapper
-  .not-found-wrapper {
+  //background / foreground 처리
+  .not-found-wrapper,
+  .auth-wrap {
     background: mat-color($background, background);
     color: mat-color($foreground, base);
   }
@@ -34,11 +35,7 @@
   .mat-bg-primary,
   .app-toolbar,
   .sidenav.mat-sidenav .sidenav-list-item.active md-icon:not(.menu-caret),
-  .chats-wrap .conversations-hold .single-conversation.me .conversation-msg,
-  .ngx-datatable .datatable-footer .datatable-pager .pager .pages.active a,
-  .fileupload-drop-zone.dz-file-over,
   .toolbar-avatar.online > .status-dot,
-  .cal-open-day-events,
   div.hopscotch-bubble {
     background: map-get($md-primary, 500) !important;
     color: #ffffff !important;

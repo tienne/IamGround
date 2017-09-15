@@ -14,9 +14,17 @@
     <app-theme *ngIf="!isWebApp"></app-theme>
 
     <!-- 기타메뉴(로그인 같은 용도로 사용)-->
-    <button md-icon-button *ngIf="!isProduction">
+    <button md-icon-button [mdMenuTriggerFor]="etcMenu">
       <md-icon>more_vert</md-icon>
     </button>
+    <md-menu #etcMenu="mdMenu">
+      <div *ngIf="!auth.authenticated">
+        <button md-menu-item [routerLink]="['/auth/login']">{{'common.toolbar.login' | translate}}</button>
+      </div>
+      <div *ngIf="auth.authenticated">
+        <button md-menu-item (click)="logout()">{{'common.toolbar.logout' | translate}}</button>
+      </div>
+    </md-menu>
   </div>
 
   <div fxFlex="0" fxHide.xs fxFlexOffset="15px"></div>

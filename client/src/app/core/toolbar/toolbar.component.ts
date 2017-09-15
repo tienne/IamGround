@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { WindowRef } from '../../shared/window-ref';
 import { environment } from '../../../environments/environment';
+import {AuthService} from '../../shared/auth/auth.service';
+import {MdSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-toolbar',
@@ -14,7 +16,10 @@ export class ToolbarComponent implements OnInit {
   isWebApp: boolean;
   isProduction = environment.production;
 
-  constructor(private _window: WindowRef) {}
+  constructor(
+    private _window: WindowRef,
+    public auth: AuthService
+  ) {}
 
   ngOnInit() {
     this.isWebApp = this._window.isWebApp();
@@ -25,5 +30,8 @@ export class ToolbarComponent implements OnInit {
   toggleSidenav() {
     this.sidenav.toggle();
   }
-  setLang() {}
+
+  logout() {
+    this.auth.logout();
+  }
 }

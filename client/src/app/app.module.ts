@@ -19,6 +19,8 @@ import {ThemeService} from './shared/theme/theme.service';
 import {I18nModule} from './shared/i18n/i18n.module';
 import {ProjectService} from './shared/project/project.service';
 import {TagsService} from './shared/tags/tags.service';
+import {AuthService} from './shared/auth/auth.service';
+import {AuthGuard} from './shared/auth/auth.guard';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import {TagsService} from './shared/tags/tags.service';
     ProjectService,
     ThemeService,
     TagsService,
-    StyleManagerService
+    StyleManagerService,
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

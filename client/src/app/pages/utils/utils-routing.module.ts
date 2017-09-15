@@ -6,7 +6,7 @@ const routes: Routes = [
     path: 'json'
   },
   {
-    path: 'test'
+    path: 'uploade'
   }
 ];
 

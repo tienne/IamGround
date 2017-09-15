@@ -25,9 +25,9 @@ export class LayoutComponent implements OnInit {
     private location: LocationService
   ) {
     this.isFetching$ = this.router.events
-      .map(event =>
-        (event instanceof NavigationStart || event instanceof RoutesRecognized)
-      );
+      .map(event => {
+        return !(event instanceof NavigationEnd);
+      });
   }
 
   ngOnInit() {

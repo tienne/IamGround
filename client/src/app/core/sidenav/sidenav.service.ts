@@ -49,9 +49,6 @@ export class SidenavService {
       icon: 'contacts',
       tooltip: 'Hi! David'
     },
-  ];
-
-  webAppMenu: ISideItem[] = [
     {
       type: SideItemTypes.separator,
       name: 'My Ground'
@@ -75,12 +72,14 @@ export class SidenavService {
           path: 'json'
         },
         {
-          name: 'test',
-          path: 'test'
+          name: 'FileUpload',
+          path: 'uploade'
         }
       ]
     }
   ];
+
+  webAppMenu: ISideItem[] = [];
 
   // 메뉴 subject
   menuItems = new BehaviorSubject<ISideItem[]>(this.menu);

@@ -3,6 +3,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import {ProjectDetailComponent} from './projects/project-detail/project-detail.component';
+import {AuthGuard} from '../shared/auth/auth.guard';
 
 export const PageRoutes: Routes = [
   {
@@ -16,7 +17,10 @@ export const PageRoutes: Routes = [
   },
   {
     path: 'projects',
-    component: ProjectsComponent
+    component: ProjectsComponent,
+    // resolve: {
+    //   projects: ProjectResolver
+    // }
   },
   {
     path: 'projects/:project',
@@ -28,10 +32,12 @@ export const PageRoutes: Routes = [
   },
   {
     path: 'interests',
-    loadChildren: 'app/pages/interests/interests.module#InterestsModule'
+    loadChildren: 'app/pages/interests/interests.module#InterestsModule',
+    canActivate: [AuthGuard]
   },
   {
     path: 'utils',
-    loadChildren: 'app/pages/utils/utils.module#UtilsModule'
+    loadChildren: 'app/pages/utils/utils.module#UtilsModule',
+    canActivate: [AuthGuard]
   }
 ];

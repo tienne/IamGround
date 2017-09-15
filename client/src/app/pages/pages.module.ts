@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialComponentsModule } from '../common/material-components.module';
 import { RouterModule } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
 import {FormsModule} from '@angular/forms';
 // app
 import { PagesRoutingModule } from './pages-routing.module';
@@ -37,6 +36,8 @@ import { TagFilterPipe } from '../shared/tags/tag-filter.pipe';
     SkillComponent,
     ProjectDetailComponent,
     TagFilterPipe
+  ],
+  providers: [
   ]
 })
 export class PagesModule { }
