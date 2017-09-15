@@ -1,4 +1,9 @@
 .not-found-wrapper {
+  display: flex;
+  align-items: center;
   height: 100%;
-  width: 100%;
+
+  .not-found-inner {
+    width: 100%;
+  }
 }
