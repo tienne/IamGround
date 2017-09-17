@@ -54,13 +54,15 @@ export class KakaoLinkService {
   }
   private loadKakaoLinkScript() {
     let scriptLoad$;
-    const sdkUrl = '//developers.kakao.com/sdk/js/kakao.js',
-      script = this._window.document.createElement('script');
+    const sdkUrl = '//developers.kakao.com/sdk/js/kakao.min.js',
+      script = this._window.document.createElement('script'),
+      firstScript = this._window.document.getElementsByTagName('script')[0];
 
     script.src = sdkUrl;
+    script.async = true;
     scriptLoad$ = Observable.fromEvent(script, 'load');
 
-    this._window.document.getElementsByTagName('body')[0].appendChild(script);
+    firstScript.parentNode.insertBefore(script, firstScript);
     return scriptLoad$;
   }
 
