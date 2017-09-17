@@ -49,6 +49,7 @@ export function FbTransLoaderFactory(db: AngularFireOfflineDatabase) {
     TranslateModule.forRoot({
       loader: { provide: TranslateLoader, useFactory: FbTransLoaderFactory, deps: [AngularFireOfflineDatabase] }
     }),
+    I18nModule,
     ServiceWorkerModule,
     KakaoLinkModule.forRoot({key: 'ee82afa0220e344c5debf1e7473146bf'})
   ],
