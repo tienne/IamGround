@@ -22,6 +22,8 @@ import {ProjectService} from './shared/project/project.service';
 import {TagsService} from './shared/tags/tags.service';
 import {AuthService} from './shared/auth/auth.service';
 import {AuthGuard} from './shared/auth/auth.guard';
+import {KakaoLinkService} from './shared/kakao-link/kakao-link.service';
+import {KakaoLinkModule} from './shared/kakao-link/kakao-link.module';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import {AuthGuard} from './shared/auth/auth.guard';
     AngularFireAuthModule,
     AppRoutingModule,
     I18nModule,
-    ServiceWorkerModule
+    ServiceWorkerModule,
+    KakaoLinkModule.forRoot({key: 'ee82afa0220e344c5debf1e7473146bf'})
   ],
   providers: [
     SkillService,

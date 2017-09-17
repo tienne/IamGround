@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/do';
 import {LocationService} from '../../shared/location/location.service';
+import {KakaoLinkService} from '../../shared/kakao-link/kakao-link.service';
 
 @Component({
   selector: 'app-layout',
