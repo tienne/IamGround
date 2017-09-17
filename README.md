@@ -5,6 +5,7 @@
 ### 사용 기술
 - Angular-cli
 - Angular 5.x(beta)
+- Angular material2
 - Rxjs
 - ngx-translate(i18n)
 - angularFire2(firebase realtime database)
