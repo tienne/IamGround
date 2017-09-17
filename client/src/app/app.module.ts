@@ -22,8 +22,14 @@ import {ProjectService} from './shared/project/project.service';
 import {TagsService} from './shared/tags/tags.service';
 import {AuthService} from './shared/auth/auth.service';
 import {AuthGuard} from './shared/auth/auth.guard';
-import {KakaoLinkService} from './shared/kakao-link/kakao-link.service';
 import {KakaoLinkModule} from './shared/kakao-link/kakao-link.module';
+import {AngularFireOfflineDatabase} from 'angularfire2-offline';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {FirebaseTransLoader} from './shared/i18n/firebase-trans-loader';
+
+export function FbTransLoaderFactory(db: AngularFireOfflineDatabase) {
+  return new FirebaseTransLoader(db);
+}
 
 @NgModule({
   declarations: [
@@ -40,7 +46,9 @@ import {KakaoLinkModule} from './shared/kakao-link/kakao-link.module';
     AngularFireOfflineModule,
     AngularFireAuthModule,
     AppRoutingModule,
-    I18nModule,
+    TranslateModule.forRoot({
+      loader: { provide: TranslateLoader, useFactory: FbTransLoaderFactory, deps: [AngularFireOfflineDatabase] }
+    }),
     ServiceWorkerModule,
     KakaoLinkModule.forRoot({key: 'ee82afa0220e344c5debf1e7473146bf'})
   ],

@@ -47,7 +47,7 @@ import {WindowRef} from '../shared/window-ref';
     LocationService,
     SidenavService,
     LocalStorageService,
-    WindowRef,
+    WindowRef
   ]
 })
 export class CoreModule { }

@@ -3,6 +3,7 @@ import {Observable} from 'rxjs/Observable';
 import {AuthService} from '../shared/auth/auth.service';
 import {MdProgressBar} from '@angular/material';
 import 'rxjs/add/operator/takeWhile';
+import {I18nService} from '../shared/i18n/i18n.service';
 
 @Component({
   selector: 'app-auth',
@@ -15,7 +16,8 @@ export class AuthComponent implements OnInit, OnDestroy {
   alive = true;
 
   constructor(
-    private auth: AuthService
+    private auth: AuthService,
+    private _i18n: I18nService
   ) { }
 
   ngOnInit() {
