@@ -1,5 +1,5 @@
 import { Injectable, Optional } from '@angular/core';
-import { KakaoLinkConfig } from './kakao-link-config';
+import {KakaoLinkConfig, KakaoSdkType} from './kakao-link-config';
 import {AsyncSubject} from 'rxjs/AsyncSubject';
 import {Observable} from 'rxjs/Observable';
 import {WindowRef} from '../window-ref';
@@ -16,7 +16,7 @@ export class KakaoLinkService {
   private _window;
 
   constructor(
-    @Optional() config: KakaoLinkConfig,
+    @Optional() private config: KakaoLinkConfig,
     _window: WindowRef,
     private _snackBar: MdSnackBar
   ) {
@@ -26,7 +26,7 @@ export class KakaoLinkService {
     this.load$.take(1).subscribe(() => {
       this._kakao = this._window.Kakao;
       if (!this._kakao.API) {
-        this._kakao.init(config.key);
+        this._kakao.init(this.config.key);
       }
     });
   }
@@ -35,7 +35,7 @@ export class KakaoLinkService {
     if (!this._window.Kakao) {
       let kakaoScript = false;
       const scripts = this._window.document.querySelectorAll('script[src]');
-      const match = /developers\.kakao\.com\/sdk\/js\/kakao/;
+      const match = this.config.sdkType === KakaoSdkType.cdn ? /developers\.kakao\.com\/sdk\/js\/kakao/ : new RegExp(this.config.path);
 
       scripts.forEach(script => {
         if (match.test(script.src)) {
@@ -54,7 +54,7 @@ export class KakaoLinkService {
   }
   private loadKakaoLinkScript() {
     let scriptLoad$;
-    const sdkUrl = '//developers.kakao.com/sdk/js/kakao.min.js',
+    const sdkUrl = this.config.sdkType === KakaoSdkType.cdn ? '//developers.kakao.com/sdk/js/kakao.min.js' : this.config.path,
       script = this._window.document.createElement('script'),
       firstScript = this._window.document.getElementsByTagName('script')[0];
 

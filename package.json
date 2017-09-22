@@ -21,5 +21,8 @@
   "homepage": "https://github.com/tienne/resume#readme",
   "devDependencies": {
     "angular-hot-loader": "^0.9.10"
+  },
+  "dependencies": {
+    "copyfiles": "^1.2.0"
   }
 }

@@ -26,6 +26,7 @@ import {KakaoLinkModule} from './shared/kakao-link/kakao-link.module';
 import {AngularFireOfflineDatabase} from 'angularfire2-offline';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {FirebaseTransLoader} from './shared/i18n/firebase-trans-loader';
+import {KakaoSdkType} from './shared/kakao-link/kakao-link-config';
 
 export function FbTransLoaderFactory(db: AngularFireOfflineDatabase) {
   return new FirebaseTransLoader(db);
@@ -51,7 +52,11 @@ export function FbTransLoaderFactory(db: AngularFireOfflineDatabase) {
     }),
     I18nModule,
     ServiceWorkerModule,
-    KakaoLinkModule.forRoot({key: 'ee82afa0220e344c5debf1e7473146bf'})
+    KakaoLinkModule.forRoot({
+      key: 'ee82afa0220e344c5debf1e7473146bf',
+      sdkType: KakaoSdkType.asset,
+      path: 'assets/js/kakao.min.js'
+    })
   ],
   providers: [
     SkillService,
